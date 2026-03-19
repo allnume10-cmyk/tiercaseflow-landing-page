@@ -162,7 +162,7 @@ export default function App() {
               Contact Sales
             </a>
             <a
-              href="https://calendly.com/tiercaseflow"
+              href="https://calendly.com/andrea-tiercaseflow/30min"
               className="inline-block rounded-xl border border-indigo-300 px-5 py-3 text-sm font-semibold text-indigo-100 hover:bg-indigo-900/30"
             >
               Book a Demo
