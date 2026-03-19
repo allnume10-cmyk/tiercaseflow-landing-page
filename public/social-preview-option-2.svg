@@ -1,0 +1,21 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1E293B"/>
+    </linearGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" stroke="#334155" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.25"/>
+  <circle cx="980" cy="120" r="220" fill="#1D4ED8" opacity="0.18"/>
+  <rect x="72" y="72" width="160" height="160" rx="24" fill="#4338CA"/>
+  <text x="152" y="163" text-anchor="middle" fill="white" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800">TIER</text>
+  <text x="280" y="188" fill="white" font-family="Inter, Arial, sans-serif" font-size="74" font-weight="800">TIER CaseFlow (TM)</text>
+  <text x="280" y="250" fill="#A5B4FC" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="600">Investigative Workflow Platform</text>
+  <text x="280" y="318" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="400">
+    Structured investigative operations from intake to resolution.
+  </text>
+</svg>

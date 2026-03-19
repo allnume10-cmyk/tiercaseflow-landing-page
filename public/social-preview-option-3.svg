@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1120"/>
+      <stop offset="1" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#1E293B" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#334155" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg3)"/>
+  <rect x="640" y="110" width="470" height="120" rx="20" fill="url(#panel)" opacity="0.7"/>
+  <rect x="700" y="260" width="380" height="90" rx="18" fill="url(#panel)" opacity="0.6"/>
+  <rect x="620" y="380" width="420" height="100" rx="18" fill="url(#panel)" opacity="0.45"/>
+  <rect x="72" y="72" width="150" height="150" rx="24" fill="#4F46E5"/>
+  <text x="147" y="158" text-anchor="middle" fill="white" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="800">TIER</text>
+  <text x="260" y="194" fill="white" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">TIER CaseFlow (TM)</text>
+  <text x="260" y="255" fill="#A5B4FC" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="600">Investigative Workflow Platform</text>
+  <text x="260" y="320" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="400">
+    Clarity, structure, and accountability for investigators.
+  </text>
+</svg>
