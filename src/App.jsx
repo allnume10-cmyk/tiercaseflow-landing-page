@@ -1,3 +1,22 @@
+/**
+ * TIER is trademarked; CaseFlow is not — ™ must sit immediately after "TIER" (not after CaseFlow).
+ * Explicit <span> avoids JSX/HTML entity quirks in some browsers.
+ */
+function BrandName({ className = '' }) {
+  return (
+    <span className={className}>
+      TIER
+      <span
+        className="align-super ml-0.5 text-[0.55em] font-bold leading-none"
+        aria-hidden="true"
+      >
+        ™
+      </span>
+      <span className="ml-1">CaseFlow</span>
+    </span>
+  )
+}
+
 export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
@@ -10,16 +29,18 @@ export default function App() {
             </span>
             <div>
               <p className="text-sm font-extrabold leading-tight tracking-tight sm:text-base">
-                Tactics for Improved Efficiency &amp; Results (TIER)&trade;
+                <BrandName />
               </p>
-              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">CaseFlow&trade;</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                Tactics for Improved Efficiency &amp; Results
+              </p>
             </div>
           </div>
           <a
             href="https://app.tiercaseflow.com"
             className="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700"
           >
-            Open TIER CaseFlow&trade;
+            Open <BrandName />
           </a>
         </div>
       </header>
@@ -28,22 +49,22 @@ export default function App() {
       <section className="mx-auto w-full max-w-6xl px-6 pb-10 pt-10 sm:pb-12 sm:pt-14">
         <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm sm:p-10">
           <h1 className="text-3xl font-black leading-tight tracking-tight sm:text-5xl">
-            TIER CaseFlow&trade;
+            <BrandName />
           </h1>
           <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-indigo-700">
             Investigative Workflow Platform
           </p>
           <p className="mt-4 max-w-4xl text-base leading-relaxed text-slate-600 sm:text-lg">
-            TIER CaseFlow&trade; centralizes case activity, directives, and reporting in one secure operational
-            workspace so investigators and attorneys stay aligned with structure and accountability from intake
-            through resolution.
+            <BrandName className="font-semibold text-slate-800" /> centralizes case activity, directives, and
+            reporting in one secure operational workspace so investigators and attorneys stay aligned with structure
+            and accountability from intake through resolution.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="https://app.tiercaseflow.com"
               className="rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-700"
             >
-              Open TIER CaseFlow&trade;
+              Open <BrandName />
             </a>
             <a
               href="mailto:info@tiercaseflow.com"
@@ -58,10 +79,12 @@ export default function App() {
       {/* Why */}
       <section className="mx-auto w-full max-w-6xl px-6 py-5 sm:py-6">
         <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
-          <h2 className="text-2xl font-bold tracking-tight">Why TIER CaseFlow&trade; Was Built</h2>
+          <h2 className="text-2xl font-bold tracking-tight">
+            Why <BrandName /> Was Built
+          </h2>
           <p className="mt-4 text-slate-600 leading-relaxed">
-            TIER CaseFlow&trade; was built to solve common case management problems: scattered notes, inconsistent
-            activity logs, and unclear priorities that slow investigators down.
+            <BrandName className="font-semibold text-slate-800" /> was built to solve common case management
+            problems: scattered notes, inconsistent activity logs, and unclear priorities that slow investigators down.
           </p>
           <p className="mt-3 text-slate-600 leading-relaxed">
             It is based on real investigative workflows and gives investigators a clear daily structure for case
@@ -121,7 +144,7 @@ export default function App() {
 
       {/* Features */}
       <section className="mx-auto w-full max-w-6xl px-6 py-8 sm:py-10">
-          <h2 className="mb-5 text-2xl font-bold tracking-tight">Core Capabilities</h2>
+        <h2 className="mb-5 text-2xl font-bold tracking-tight">Core Capabilities</h2>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {[
             ['Case File Jackets', 'Centralized matter details, court events, communications, and evidence status.'],
@@ -153,7 +176,7 @@ export default function App() {
               href="https://app.tiercaseflow.com"
               className="inline-block rounded-xl bg-indigo-500 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-400"
             >
-              Open TIER CaseFlow&trade;
+              Open <BrandName />
             </a>
             <a
               href="mailto:info@tiercaseflow.com"
@@ -173,7 +196,9 @@ export default function App() {
 
       <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 TIER CaseFlow&trade;. All rights reserved.</p>
+          <p>
+            © 2026 <BrandName />. All rights reserved.
+          </p>
           <div className="flex flex-wrap gap-4">
             <a className="hover:text-slate-700" href="mailto:info@tiercaseflow.com">
               info@tiercaseflow.com
