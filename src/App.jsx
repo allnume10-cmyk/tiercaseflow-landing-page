@@ -194,52 +194,15 @@ export default function App() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center">
-            <div className="w-full max-w-xl rounded-[28px] border border-white/10 bg-white/5 p-4 shadow-2xl backdrop-blur">
-              <div className="rounded-[24px] border border-white/10 bg-slate-900 p-5">
-                <div className="mb-4 flex items-center justify-between">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Dashboard Preview</p>
-                    <h2 className="mt-1 text-lg font-semibold">Case Overview</h2>
-                  </div>
-                  <div className="rounded-full bg-emerald-400/15 px-3 py-1 text-xs font-medium text-emerald-300">
-                    Live Workflow
-                  </div>
-                </div>
-
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {[
-                    ['Active Cases', '48'],
-                    ['Tasks Due This Week', '12'],
-                    ['Missing Vouchers', '7'],
-                    ['Upcoming Court Dates', '9'],
-                  ].map(([label, value]) => (
-                    <div key={label} className="rounded-2xl border border-white/10 bg-slate-800/70 p-4">
-                      <p className="text-sm text-slate-400">{label}</p>
-                      <p className="mt-2 text-3xl font-semibold">{value}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-4 rounded-2xl border border-white/10 bg-slate-800/70 p-4">
-                  <div className="mb-3 flex items-center justify-between">
-                    <p className="font-medium">Priority Focus</p>
-                    <span className="text-xs text-slate-400">Today</span>
-                  </div>
-                  <div className="space-y-3 text-sm text-slate-300">
-                    <div className="rounded-xl bg-white/5 px-3 py-2">
-                      Follow up on stagnant cases over 45 days.
-                    </div>
-                    <div className="rounded-xl bg-white/5 px-3 py-2">
-                      Review cases assigned 90+ days with no voucher opened.
-                    </div>
-                    <div className="rounded-xl bg-white/5 px-3 py-2">
-                      Prepare upcoming attorney status reports.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="flex w-full max-w-xl flex-col items-center justify-center lg:max-w-none lg:items-stretch">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-cyan-300">
+              Intelligence Command Center
+            </p>
+            <img
+              src="/tier-caseflow-dashboard.png"
+              alt="TIER CaseFlow Intelligence Command Dashboard"
+              className="h-auto w-full rounded-[24px] border border-white/10 shadow-2xl"
+            />
           </div>
         </div>
       </section>
