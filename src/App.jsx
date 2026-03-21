@@ -1,3 +1,4 @@
+const APP_URL = 'https://app.tiercaseflow.com'
 const CALENDLY_URL = 'https://calendly.com/andrea-tiercaseflow/30min'
 const MAILTO = 'mailto:info@tiercaseflow.com'
 
@@ -79,12 +80,20 @@ export default function App() {
             </a>
           </nav>
 
-          <a
-            href="#contact"
-            className="rounded-2xl border border-white/15 bg-white px-4 py-2 text-sm font-medium text-slate-950 shadow-lg transition hover:scale-[1.02]"
-          >
-            Book a Demo
-          </a>
+          <div className="flex shrink-0 items-center gap-3 sm:gap-4">
+            <a
+              href={APP_URL}
+              className="text-sm font-medium text-slate-300 transition hover:text-white"
+            >
+              Sign in
+            </a>
+            <a
+              href="#contact"
+              className="rounded-2xl border border-white/15 bg-white px-4 py-2 text-sm font-medium text-slate-950 shadow-lg transition hover:scale-[1.02]"
+            >
+              Book a Demo
+            </a>
+          </div>
         </div>
       </header>
 
