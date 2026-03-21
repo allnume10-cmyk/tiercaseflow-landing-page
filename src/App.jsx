@@ -103,8 +103,8 @@ export default function App() {
           </div>
 
           <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-300">
-            <a href="#problem" className="transition hover:text-white">
-              Problem
+            <a href="#challenges" className="transition hover:text-white">
+              Challenges
             </a>
             <a href="#features" className="transition hover:text-white">
               Features
@@ -244,11 +244,11 @@ export default function App() {
         </div>
       </section>
 
-      {/* Problem */}
-      <section id="problem" className="border-t border-white/10 bg-slate-900/70">
+      {/* Challenges */}
+      <section id="challenges" className="border-t border-white/10 bg-slate-900/70">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">The Problem</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">The Challenges</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
               Too many cases. Too many moving parts. Not enough visibility.
             </h2>
@@ -347,7 +347,7 @@ export default function App() {
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Features</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-              Everything you need to run your cases.
+              Everything You Need to Manage Cases and Protect Your Revenue
             </h2>
           </div>
 
