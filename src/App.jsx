@@ -1,70 +1,41 @@
-const APP_URL = 'https://app.tiercaseflow.com'
 const CALENDLY_URL = 'https://calendly.com/andrea-tiercaseflow/30min'
 const MAILTO = 'mailto:info@tiercaseflow.com'
-
-/** TIER™ immediately before CaseFlow (TIER is trademarked). */
-function BrandName({ className = '' }) {
-  return (
-    <span className={className}>
-      TIER
-      <span
-        className="align-super ml-0.5 text-[0.55em] font-bold leading-none"
-        aria-hidden="true"
-      >
-        ™
-      </span>
-      <span className="ml-1">CaseFlow</span>
-    </span>
-  )
-}
-
-/** Hero: TIER™ prominent; CaseFlow secondary color. */
-function HeroWordmark({ className = '' }) {
-  return (
-    <span className={className}>
-      <span className="text-white">
-        TIER
-        <span
-          className="align-super ml-0.5 text-[0.55em] font-bold leading-none"
-          aria-hidden="true"
-        >
-          ™
-        </span>
-      </span>{' '}
-      <span className="text-slate-300">CaseFlow</span>
-    </span>
-  )
-}
 
 export default function App() {
   const features = [
     {
-      title: 'Case Management',
+      title: 'Case Command Center',
       description:
-        'Track every case from intake to closure in one centralized system.',
+        'View and manage every case from intake to closure in one centralized system.',
       icon: '📁',
     },
     {
-      title: 'Activity Tracking',
+      title: 'Activity Intelligence',
       description:
-        'Log investigative work, updates, and notes with clarity and consistency.',
+        'Capture every investigative activity with timestamps, notes, and full visibility.',
       icon: '📝',
     },
     {
-      title: 'Voucher Monitoring',
+      title: 'Revenue Protection',
       description:
-        'Keep an eye on missing vouchers so completed work does not slip through unpaid.',
+        'Identify missing vouchers and ensure every completed task is accounted for and billable.',
       icon: '💳',
     },
     {
-      title: 'Reporting Dashboard',
+      title: 'Operational Dashboard',
       description:
-        'Get visibility into case progress, deadlines, and workload at a glance.',
+        'Monitor case progress, deadlines, and workload with real-time insights.',
       icon: '📊',
+    },
+    {
+      title: 'Risk & Priority Alerts',
+      description:
+        'Surface stagnant cases, overdue actions, and critical risks so you know exactly where to focus next.',
+      icon: '🚨',
     },
   ]
 
-  const problems = [
+  const challenges = [
     'Cases scattered across emails, notes, and spreadsheets',
     'Missed vouchers leading to lost revenue',
     'No clear visibility into case status',
@@ -87,22 +58,13 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
-      {/* Header */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between lg:px-8">
-          <div className="flex items-center justify-between gap-4 sm:justify-start">
-            <a href="/" className="text-lg font-semibold tracking-wide hover:opacity-90">
-              <BrandName />
-            </a>
-            <a
-              href={APP_URL}
-              className="rounded-xl border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-white sm:hidden"
-            >
-              Open app
-            </a>
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+          <div className="text-lg font-semibold tracking-wide">
+            <span className="text-white">TIER™</span>
           </div>
 
-          <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-300">
+          <nav className="hidden items-center gap-8 text-sm text-slate-300 md:flex">
             <a href="#challenges" className="transition hover:text-white">
               Challenges
             </a>
@@ -115,59 +77,37 @@ export default function App() {
             <a href="#contact" className="transition hover:text-white">
               Demo
             </a>
-            <a
-              href={APP_URL}
-              className="hidden font-medium text-cyan-200 transition hover:text-white sm:inline"
-            >
-              Open app
-            </a>
           </nav>
 
-          <div className="flex flex-wrap items-center gap-3 sm:justify-end">
-            <a
-              href={APP_URL}
-              className="hidden rounded-2xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10 sm:inline-block"
-            >
-              Log in
-            </a>
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-2xl border border-white/15 bg-white px-4 py-2 text-sm font-medium text-slate-950 shadow-lg transition hover:scale-[1.02]"
-            >
-              Book a Demo
-            </a>
-          </div>
+          <a
+            href="#contact"
+            className="rounded-2xl border border-white/15 bg-white px-4 py-2 text-sm font-medium text-slate-950 shadow-lg transition hover:scale-[1.02]"
+          >
+            Book a Demo
+          </a>
         </div>
       </header>
 
-      {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.18),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(168,85,247,0.16),transparent_30%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
           <div className="flex flex-col justify-center">
             <div className="mb-4 inline-flex w-fit items-center rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-cyan-200">
-              Investigative Case Management Platform
+              Investigative Case Intelligence Platform
             </div>
 
             <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              <HeroWordmark />
+              TIER™ <span className="text-slate-300">CaseFlow</span>
             </h1>
 
             <p className="mt-4 text-xl text-slate-200 sm:text-2xl">
-              Investigative Case Management, Simplified.
+              Command Your Cases. Protect Your Revenue.
             </p>
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-              Run your entire investigative caseload from one system—no spreadsheets, no missed vouchers, no
-              forgotten follow-ups.
-            </p>
-
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300">
-              <BrandName className="font-semibold text-slate-100" /> is a software platform designed for
-              investigators and legal professionals to manage cases, track activities, monitor deadlines, and
-              streamline workflow from intake to closure.
+              TIER CaseFlow is a real-time intelligence platform that helps investigators manage cases, track
+              activities, monitor deadlines, and streamline workflow from intake to closure—ensuring no work goes
+              unbilled.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -178,51 +118,43 @@ export default function App() {
                 Get Started
               </a>
               <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contact"
                 className="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Schedule Demo
               </a>
-              <a
-                href={APP_URL}
-                className="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 px-6 py-3 text-center text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/20"
-              >
-                Open app
-              </a>
             </div>
           </div>
 
-          <div className="flex w-full max-w-xl flex-col items-center justify-center lg:max-w-none lg:items-stretch">
-            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-cyan-300">
-              Intelligence Command Center
-            </p>
-            <img
-              src="/tier-caseflow-dashboard.png"
-              alt="TIER CaseFlow Intelligence Command Dashboard"
-              className="h-auto w-full rounded-[24px] border border-white/10 shadow-2xl"
-            />
+          <div className="flex items-center justify-center">
+            <div className="w-full max-w-2xl rounded-[28px] border border-white/10 bg-white/5 p-4 shadow-2xl backdrop-blur">
+              <p className="mb-3 text-sm uppercase tracking-[0.2em] text-cyan-300">
+                Intelligence Command Center
+              </p>
+              <img
+                src="/tier-caseflow-dashboard.png"
+                alt="TIER CaseFlow Intelligence Command Dashboard"
+                className="w-full rounded-[24px] border border-white/10 shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Challenges */}
       <section id="challenges" className="border-t border-white/10 bg-slate-900/70">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">The Challenges</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Challenges</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-              Too many cases. Too many moving parts. Not enough visibility.
+              Where Investigators Lose Time & Money
             </h2>
             <p className="mt-5 text-lg leading-8 text-slate-300">
-              Investigators should not have to piece together their business from email threads, handwritten
-              notes, and scattered spreadsheets.
+              When workflow is scattered, things get missed—and missed work means missed revenue.
             </p>
           </div>
 
           <div className="mt-10 grid gap-4 md:grid-cols-2">
-            {problems.map((item) => (
+            {challenges.map((item) => (
               <div
                 key={item}
                 className="rounded-3xl border border-white/10 bg-slate-950/60 p-6 text-slate-200 shadow-lg"
@@ -239,7 +171,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Solution */}
       <section className="bg-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
@@ -251,9 +182,8 @@ export default function App() {
                 Centralize your cases, tasks, activities, and reporting.
               </h2>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-                <BrandName className="font-semibold text-slate-100" /> brings your workflow into one platform so
-                you can track progress, monitor deadlines, manage communication, and move every case forward with
-                confidence.
+                TIER CaseFlow brings your workflow into one platform so you can track progress, monitor deadlines,
+                manage communication, and move every case forward with confidence.
               </p>
             </div>
 
@@ -270,7 +200,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Built for investigators */}
       <section className="border-t border-white/10 bg-slate-900/60">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
@@ -282,8 +211,8 @@ export default function App() {
                 Created from real investigative workflows, not theory.
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-300">
-                The platform reflects how investigations actually run—so cases keep moving, tasks stay visible,
-                attorneys stay informed, and revenue does not get left on the table.
+                Built from real investigative workflows, TIER CaseFlow is designed to keep cases moving, eliminate
+                missed tasks, keep attorneys informed, and ensure no revenue is left on the table.
               </p>
             </div>
 
@@ -304,7 +233,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Features */}
       <section id="features" className="bg-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="max-w-3xl">
@@ -314,7 +242,7 @@ export default function App() {
             </h2>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {features.map((feature) => (
               <div
                 key={feature.title}
@@ -331,7 +259,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* How it works */}
       <section className="border-t border-white/10 bg-slate-900/60">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="max-w-3xl">
@@ -357,7 +284,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Pricing */}
       <section id="pricing" className="bg-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -419,7 +345,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* CTA */}
       <section id="contact" className="border-t border-white/10 bg-slate-900/60">
         <div className="mx-auto max-w-5xl px-6 py-20 text-center lg:px-8">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Ready When You Are</p>
@@ -427,8 +352,8 @@ export default function App() {
             Ready to take control of your cases?
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-            Start using <BrandName className="font-semibold text-slate-100" /> today and bring clarity, structure,
-            and efficiency to your investigative workflow.
+            Start using TIER CaseFlow today and bring clarity, structure, and efficiency to your investigative
+            workflow.
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -446,25 +371,16 @@ export default function App() {
             >
               Schedule Demo
             </a>
-            <a
-              href={APP_URL}
-              className="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 px-6 py-3 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/20"
-            >
-              Open app
-            </a>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="border-t border-white/10 bg-slate-950">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-slate-400 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <p>© 2026 Tactics for Improved Efficiency & Results, LLC. All rights reserved.</p>
           <div className="space-y-1 text-left lg:text-right">
             <p>TIER™ is a trademark of Tactics for Improved Efficiency & Results, LLC.</p>
-            <p>
-              <BrandName /> is provided by Tactics for Improved Efficiency &amp; Results, LLC.
-            </p>
+            <p>TIER CaseFlow is a software platform provided by TIER.</p>
           </div>
         </div>
       </footer>
