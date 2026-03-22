@@ -1,6 +1,7 @@
 const APP_URL = 'https://app.tiercaseflow.com'
 const CALENDLY_URL = 'https://calendly.com/andrea-tiercaseflow/30min'
 const MAILTO = 'mailto:info@tiercaseflow.com'
+const SUPPORT_MAILTO = 'mailto:support@tiercaseflow.com'
 const ONBOARDING_FORM_URL = 'https://forms.gle/hSyMZcsoNLzwWXzk9'
 const STRIPE_CHECKOUT_STARTER_URL = 'https://buy.stripe.com/5kQ9AT7Na8hE1c10erbjW00'
 const STRIPE_CHECKOUT_PRO_URL = 'https://buy.stripe.com/bJe00jaZm69w4od4uHbjW01'
@@ -80,6 +81,12 @@ export default function App() {
                 className="min-h-[44px] min-w-[44px] px-2 py-2 text-sm font-medium text-slate-300 transition hover:text-white sm:min-h-0 sm:min-w-0 sm:px-0"
               >
                 Sign in
+              </a>
+              <a
+                href={SUPPORT_MAILTO}
+                className="min-h-[44px] rounded-2xl border border-white/15 bg-white/5 px-3 py-2 text-center text-xs font-medium text-white transition hover:bg-white/10 sm:min-h-0 sm:px-4 sm:text-sm"
+              >
+                Support
               </a>
               <a
                 href="#contact"
