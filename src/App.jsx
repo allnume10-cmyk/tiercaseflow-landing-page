@@ -2,6 +2,8 @@ const APP_URL = 'https://app.tiercaseflow.com'
 const CALENDLY_URL = 'https://calendly.com/andrea-tiercaseflow/30min'
 const MAILTO = 'mailto:info@tiercaseflow.com'
 const ONBOARDING_FORM_URL = 'https://forms.gle/hSyMZcsoNLzwWXzk9'
+const STRIPE_CHECKOUT_STARTER_URL = 'https://buy.stripe.com/5kQ9AT7Na8hE1c10erbjW00'
+const STRIPE_CHECKOUT_PRO_URL = 'https://buy.stripe.com/bJe00jaZm69w4od4uHbjW01'
 
 export default function App() {
   const features = [
@@ -321,7 +323,9 @@ export default function App() {
                 <li>• Basic reporting</li>
               </ul>
               <a
-                href="#contact"
+                href={STRIPE_CHECKOUT_STARTER_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-8 inline-block rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Choose Starter
@@ -349,7 +353,9 @@ export default function App() {
                 <li>• Back-office support</li>
               </ul>
               <a
-                href="#contact"
+                href={STRIPE_CHECKOUT_PRO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-8 inline-block rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg transition hover:scale-[1.02]"
               >
                 Choose Pro
