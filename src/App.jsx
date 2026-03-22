@@ -4,6 +4,12 @@ const MAILTO = 'mailto:info@tiercaseflow.com'
 const ONBOARDING_FORM_URL = 'https://forms.gle/hSyMZcsoNLzwWXzk9'
 const STRIPE_CHECKOUT_STARTER_URL = 'https://buy.stripe.com/5kQ9AT7Na8hE1c10erbjW00'
 const STRIPE_CHECKOUT_PRO_URL = 'https://buy.stripe.com/bJe00jaZm69w4od4uHbjW01'
+const TERMS_URL =
+  'https://docs.google.com/document/d/1wls41IsUejAfLeTYgflUzXkKGmiklqCCfMIsDRmYG3w/edit?usp=share_link'
+const PRIVACY_POLICY_URL =
+  'https://docs.google.com/document/d/1fOmIvltJkqiWzne3Jy9rs-05EILmtpgO3Eofx8aWQj8/edit?usp=share_link'
+const REFUND_POLICY_URL =
+  'https://docs.google.com/document/d/1VJVwCsfpCHIetzRmTF_ZuY8PGD2u0GfZ-O-puMhO86A/edit?usp=share_link'
 
 export default function App() {
   const features = [
@@ -442,9 +448,43 @@ export default function App() {
       </section>
 
       <footer className="border-t border-white/10 bg-slate-950">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-slate-400 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-          <p>© 2026 Tactics for Improved Efficiency & Results, LLC. All rights reserved.</p>
-          <div className="space-y-1 text-left lg:text-right">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-8 text-sm text-slate-400 lg:flex-row lg:items-start lg:justify-between lg:px-8">
+          <div>
+            <p>© 2026 Tactics for Improved Efficiency & Results, LLC. All rights reserved.</p>
+            <ul className="mt-4 list-disc space-y-1.5 pl-5 text-slate-300">
+              <li>
+                <a
+                  href={TERMS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-white/30 underline-offset-2 transition hover:text-white hover:decoration-white/60"
+                >
+                  Terms &amp; Conditions
+                </a>
+              </li>
+              <li>
+                <a
+                  href={PRIVACY_POLICY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-white/30 underline-offset-2 transition hover:text-white hover:decoration-white/60"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a
+                  href={REFUND_POLICY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-white/30 underline-offset-2 transition hover:text-white hover:decoration-white/60"
+                >
+                  Refund Policy
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="space-y-1 text-left lg:max-w-md lg:text-right">
             <p>TIER™ is a trademark of Tactics for Improved Efficiency & Results, LLC.</p>
             <p>TIER CaseFlow is a software platform provided by TIER.</p>
           </div>
