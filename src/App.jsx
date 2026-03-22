@@ -324,8 +324,6 @@ export default function App() {
               </ul>
               <a
                 href={STRIPE_CHECKOUT_STARTER_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="mt-8 inline-block rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Choose Starter
@@ -354,8 +352,6 @@ export default function App() {
               </ul>
               <a
                 href={STRIPE_CHECKOUT_PRO_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="mt-8 inline-block rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg transition hover:scale-[1.02]"
               >
                 Choose Pro
