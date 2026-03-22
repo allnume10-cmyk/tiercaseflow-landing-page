@@ -1,6 +1,7 @@
 const APP_URL = 'https://app.tiercaseflow.com'
 const CALENDLY_URL = 'https://calendly.com/andrea-tiercaseflow/30min'
 const MAILTO = 'mailto:info@tiercaseflow.com'
+const ONBOARDING_FORM_URL = 'https://forms.gle/hSyMZcsoNLzwWXzk9'
 
 export default function App() {
   const features = [
@@ -58,54 +59,58 @@ export default function App() {
   ]
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <div className="text-lg font-semibold tracking-wide">
-            <span className="text-white">TIER™</span>
+    <div className="min-h-screen overflow-x-hidden bg-slate-950 text-white antialiased">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 sm:py-4 lg:flex-row lg:items-center lg:justify-between lg:gap-4 lg:px-8">
+          <div className="flex w-full items-center justify-between gap-2 lg:w-auto lg:justify-start">
+            <div className="text-base font-semibold tracking-wide sm:text-lg">
+              <span className="text-white">TIER™</span>
+            </div>
+            <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+              <a
+                href={APP_URL}
+                className="min-h-[44px] min-w-[44px] px-2 py-2 text-sm font-medium text-slate-300 transition hover:text-white sm:min-h-0 sm:min-w-0 sm:px-0"
+              >
+                Sign in
+              </a>
+              <a
+                href="#contact"
+                className="min-h-[44px] rounded-2xl border border-white/15 bg-white px-3 py-2 text-center text-xs font-medium text-slate-950 shadow-lg transition hover:scale-[1.02] sm:min-h-0 sm:px-4 sm:text-sm"
+              >
+                Book a Demo
+              </a>
+            </div>
           </div>
 
-          <nav className="hidden items-center gap-8 text-sm text-slate-300 md:flex">
-            <a href="#challenges" className="transition hover:text-white">
+          <nav className="flex w-full flex-wrap items-center justify-center gap-x-4 gap-y-2 border-t border-white/5 pt-3 text-xs text-slate-300 sm:text-sm lg:w-auto lg:justify-end lg:border-t-0 lg:pt-0 lg:text-sm">
+            <a href="#challenges" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
               Challenges
             </a>
-            <a href="#features" className="transition hover:text-white">
+            <a href="#features" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
               Features
             </a>
-            <a href="#pricing" className="transition hover:text-white">
+            <a href="#pricing" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
               Pricing
             </a>
-            <a href="#contact" className="transition hover:text-white">
+            <a href="#onboarding" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
+              Onboarding
+            </a>
+            <a href="#contact" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
               Demo
             </a>
           </nav>
-
-          <div className="flex shrink-0 items-center gap-3 sm:gap-4">
-            <a
-              href={APP_URL}
-              className="text-sm font-medium text-slate-300 transition hover:text-white"
-            >
-              Sign in
-            </a>
-            <a
-              href="#contact"
-              className="rounded-2xl border border-white/15 bg-white px-4 py-2 text-sm font-medium text-slate-950 shadow-lg transition hover:scale-[1.02]"
-            >
-              Book a Demo
-            </a>
-          </div>
         </div>
       </header>
 
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.18),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(168,85,247,0.16),transparent_30%)]" />
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:gap-12 sm:px-6 sm:py-20 lg:grid-cols-2 lg:px-8 lg:py-28">
           <div className="flex flex-col justify-center">
-            <div className="mb-4 inline-flex w-fit items-center rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-cyan-200">
+            <div className="mb-4 inline-flex max-w-full items-center rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3 py-1.5 text-[10px] font-medium uppercase leading-snug tracking-[0.15em] text-cyan-200 sm:text-xs sm:tracking-[0.2em]">
               Investigative Case Intelligence Platform
             </div>
 
-            <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-3xl text-[1.65rem] font-semibold leading-[1.15] tracking-tight min-[400px]:text-3xl sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl">
               TIER™ <span className="text-slate-300">CaseFlow</span>
             </h1>
 
@@ -351,6 +356,53 @@ export default function App() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="onboarding" className="border-t border-white/10 bg-slate-950">
+        <div className="mx-auto max-w-3xl px-6 py-16 text-center lg:px-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Optional add-on</p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+            White-Glove Onboarding <span className="text-slate-500">(Optional)</span>
+          </h2>
+          <p className="mt-4 text-base leading-7 text-slate-300 sm:text-lg">
+            Need help getting started? We’ll help migrate your existing cases into TIER CaseFlow and organize your
+            workspace from day one.
+          </p>
+
+          <h3 className="mt-10 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">The onboarding process</h3>
+          <ol className="mx-auto mt-5 max-w-md space-y-3 text-left text-base text-slate-200">
+            <li className="flex gap-3">
+              <span className="shrink-0 font-semibold text-cyan-300">1.</span>
+              <span>Subscribe to TIER CaseFlow</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="shrink-0 font-semibold text-cyan-300">2.</span>
+              <span>Submit an onboarding request</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="shrink-0 font-semibold text-cyan-300">3.</span>
+              <span>Receive a custom quote</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="shrink-0 font-semibold text-cyan-300">4.</span>
+              <span>Onboarding begins once payment is received</span>
+            </li>
+          </ol>
+
+          <p className="mx-auto mt-8 max-w-xl text-sm leading-6 text-slate-400">
+            Pricing is custom based on caseload and data sources; we’ll confirm scope before any work. Most onboarding
+            projects range between $250–$750.
+          </p>
+
+          <a
+            href={ONBOARDING_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-block rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+          >
+            Request onboarding quote
+          </a>
         </div>
       </section>
 
