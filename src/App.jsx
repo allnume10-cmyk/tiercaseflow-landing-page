@@ -362,7 +362,7 @@ export default function App() {
               </p>
               <p className="mt-4 text-slate-100">
                 Designed for investigators who want ongoing oversight, structure, and support as their caseload
-                grows.
+                grows—while ensuring cases continue to move and revenue is consistently captured.
               </p>
               <ul className="mt-6 space-y-3 text-slate-100">
                 <li>• Full case management</li>
