@@ -322,14 +322,16 @@ export default function App() {
             </h2>
           </div>
 
-          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          <div className="mt-12 grid gap-8 lg:grid-cols-3">
             <div className="rounded-[32px] border border-white/10 bg-slate-900/70 p-8 shadow-xl">
               <p className="text-sm uppercase tracking-[0.2em] text-slate-400">Starter</p>
               <div className="mt-4 flex items-end gap-2">
                 <span className="text-5xl font-semibold">$100</span>
                 <span className="mb-1 text-slate-400">/ month</span>
               </div>
-              <p className="mt-4 text-slate-300">A clean starting point for case tracking and organization.</p>
+              <p className="mt-4 text-slate-300">
+                A structured foundation for case tracking, activity logging, and day-to-day organization.
+              </p>
               <ul className="mt-6 space-y-3 text-slate-200">
                 <li>• Case tracking</li>
                 <li>• Activity logging</li>
@@ -351,13 +353,16 @@ export default function App() {
                 </span>
               </div>
               <div className="mt-4 flex items-end gap-2">
-                <span className="text-5xl font-semibold">Custom</span>
+                <span className="text-2xl font-semibold leading-tight">Operational Advisory &amp; Support</span>
               </div>
-              <p className="mt-4 text-slate-200">
-                Support is customized based on your needs and caseload size.
+              <p className="mt-2 text-sm font-medium text-cyan-100">(Premium Support)</p>
+              <p className="mt-4 text-slate-100">
+                A hands-on support service designed to help manage workflow, monitor case progress, and ensure
+                nothing falls through the cracks.
               </p>
               <p className="mt-4 text-slate-100">
-                Ideal for investigators managing higher caseloads or looking for operational support.
+                Designed for investigators who want ongoing oversight, structure, and support as their caseload
+                grows.
               </p>
               <ul className="mt-6 space-y-3 text-slate-100">
                 <li>• Full case management</li>
@@ -374,57 +379,36 @@ export default function App() {
                 Request Pro Quote
               </a>
             </div>
+            <div id="onboarding" className="rounded-[32px] border border-white/10 bg-slate-900/70 p-8 shadow-xl">
+              <div className="flex items-center justify-between gap-4">
+                <p className="text-sm uppercase tracking-[0.2em] text-slate-300">White-Glove Onboarding</p>
+                <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-slate-200">Optional</span>
+              </div>
+              <p className="mt-4 text-slate-300">
+                We migrate existing cases and organize your system so you start with a clean, structured workflow.
+              </p>
+              <p className="mt-4 text-slate-300">
+                Pricing is custom based on caseload and data sources; most projects range between $250-$750.
+              </p>
+              <div className="mt-6 rounded-2xl border border-white/10 bg-slate-950/60 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">Onboarding process</p>
+                <ol className="mt-3 space-y-2 text-sm text-slate-200">
+                  <li>1. Subscribe to TIER CaseFlow</li>
+                  <li>2. Submit an onboarding request</li>
+                  <li>3. Receive a custom quote</li>
+                  <li>4. Onboarding begins after payment</li>
+                </ol>
+              </div>
+              <a
+                href={ONBOARDING_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-block rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Request Onboarding Quote
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section id="onboarding" className="border-t border-white/10 bg-slate-950">
-        <div className="mx-auto max-w-3xl px-6 py-16 text-center lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">Optional add-on</p>
-          <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
-            White-Glove Onboarding <span className="text-slate-500">(Optional)</span>
-          </h2>
-          <p className="mt-4 text-base leading-7 text-slate-300 sm:text-lg">
-            Need help getting started? We’ll help migrate your existing cases into TIER CaseFlow and organize your
-            workspace from day one.
-          </p>
-          <p className="mx-auto mt-5 max-w-2xl text-base font-medium leading-7 text-cyan-100/95">
-            Designed to get you fully set up without disrupting your current workflow.
-          </p>
-
-          <h3 className="mt-10 text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">The onboarding process</h3>
-          <ol className="mx-auto mt-5 max-w-md space-y-3 text-left text-base text-slate-200">
-            <li className="flex gap-3">
-              <span className="shrink-0 font-semibold text-cyan-300">1.</span>
-              <span>Subscribe to TIER CaseFlow</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="shrink-0 font-semibold text-cyan-300">2.</span>
-              <span>Submit an onboarding request</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="shrink-0 font-semibold text-cyan-300">3.</span>
-              <span>Receive a custom quote</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="shrink-0 font-semibold text-cyan-300">4.</span>
-              <span>Onboarding begins once payment is received</span>
-            </li>
-          </ol>
-
-          <p className="mx-auto mt-8 max-w-xl text-sm leading-6 text-slate-400">
-            Pricing is custom based on caseload and data sources; we’ll confirm scope before any work. Most onboarding
-            projects range between $250–$750.
-          </p>
-
-          <a
-            href={ONBOARDING_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-block rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-          >
-            Request Your Onboarding Quote
-          </a>
         </div>
       </section>
 
