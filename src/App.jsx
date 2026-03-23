@@ -3,7 +3,8 @@ const CALENDLY_URL = 'https://calendly.com/andrea-tiercaseflow/30min'
 const CONTACT_US_MAILTO = 'mailto:support@tiercaseflow.com'
 const ONBOARDING_FORM_URL = 'https://forms.gle/hSyMZcsoNLzwWXzk9'
 const STRIPE_CHECKOUT_STARTER_URL = 'https://buy.stripe.com/5kQ9AT7Na8hE1c10erbjW00'
-const STRIPE_CHECKOUT_PRO_URL = 'https://buy.stripe.com/bJe00jaZm69w4od4uHbjW01'
+const PRO_QUOTE_FORM_URL =
+  'https://docs.google.com/forms/d/e/1FAIpQLSeRZr_KctWw16dkkHiIjhxA9ZHaOe0AijFkOGBRvSFHf0ExaQ/viewform?usp=publish-editor'
 const TERMS_URL =
   'https://docs.google.com/document/d/1wls41IsUejAfLeTYgflUzXkKGmiklqCCfMIsDRmYG3w/edit?usp=share_link'
 const PRIVACY_POLICY_URL =
@@ -350,11 +351,13 @@ export default function App() {
                 </span>
               </div>
               <div className="mt-4 flex items-end gap-2">
-                <span className="text-5xl font-semibold">$250</span>
-                <span className="mb-1 text-slate-300">/ month</span>
+                <span className="text-5xl font-semibold">Custom</span>
               </div>
               <p className="mt-4 text-slate-200">
-                Expanded support for investigators who want stronger structure and oversight.
+                Support is customized based on your needs and caseload size.
+              </p>
+              <p className="mt-4 text-slate-100">
+                Ideal for investigators managing higher caseloads or looking for operational support.
               </p>
               <ul className="mt-6 space-y-3 text-slate-100">
                 <li>• Full case management</li>
@@ -363,10 +366,12 @@ export default function App() {
                 <li>• Back-office support</li>
               </ul>
               <a
-                href={STRIPE_CHECKOUT_PRO_URL}
+                href={PRO_QUOTE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-8 inline-block rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg transition hover:scale-[1.02]"
               >
-                Choose Pro
+                Request Pro Quote
               </a>
             </div>
           </div>
