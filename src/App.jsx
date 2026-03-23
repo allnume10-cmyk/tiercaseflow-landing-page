@@ -1,6 +1,5 @@
 const APP_URL = 'https://app.tiercaseflow.com'
 const CALENDLY_URL = 'https://calendly.com/andrea-tiercaseflow/30min'
-const MAILTO = 'mailto:info@tiercaseflow.com'
 const CONTACT_US_MAILTO = 'mailto:support@tiercaseflow.com'
 const ONBOARDING_FORM_URL = 'https://forms.gle/hSyMZcsoNLzwWXzk9'
 const STRIPE_CHECKOUT_STARTER_URL = 'https://buy.stripe.com/5kQ9AT7Na8hE1c10erbjW00'
@@ -437,7 +436,7 @@ export default function App() {
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              href={MAILTO}
+              href={CONTACT_US_MAILTO}
               className="rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-slate-950 shadow-xl transition hover:scale-[1.02]"
             >
               Email Us
