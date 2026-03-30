@@ -16,10 +16,15 @@ const PRIVACY_POLICY_URL =
   'https://docs.google.com/document/d/1fOmIvltJkqiWzne3Jy9rs-05EILmtpgO3Eofx8aWQj8/edit?usp=share_link'
 const REFUND_POLICY_URL =
   'https://docs.google.com/document/d/1VJVwCsfpCHIetzRmTF_ZuY8PGD2u0GfZ-O-puMhO86A/edit?usp=share_link'
+const SYSTEM_STATUS_KEY = 'system_status_banner_v1'
+const SUPABASE_URL = 'https://hezgzrgwuegovztqxsts.supabase.co'
+const SUPABASE_ANON_KEY =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhlemd6cmd3dWVnb3Z6dHF4c3RzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjcwMjEyNTMsImV4cCI6MjA4MjU5NzI1M30.7Oph6m2BlYmpUTa465Ak2eu4I5VEKh6Amvkvjh6AG9s'
 
 export default function App() {
   const [showHeaderContact, setShowHeaderContact] = useState(false)
   const headerContactRef = useRef(null)
+  const [publicSystemStatus, setPublicSystemStatus] = useState(null)
 
   useEffect(() => {
     if (!showHeaderContact) return
@@ -33,6 +38,44 @@ export default function App() {
     window.addEventListener('pointerdown', onPointerDown)
     return () => window.removeEventListener('pointerdown', onPointerDown)
   }, [showHeaderContact])
+
+  useEffect(() => {
+    const loadPublicSystemStatus = async () => {
+      try {
+        const query = new URLSearchParams({
+          select: 'value',
+          key: `eq.${SYSTEM_STATUS_KEY}`,
+          limit: '1',
+        });
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/app_settings?${query.toString()}`, {
+          method: 'GET',
+          headers: {
+            apikey: SUPABASE_ANON_KEY,
+            Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+          },
+        });
+        if (!res.ok) return;
+        const rows = await res.json();
+        if (!Array.isArray(rows) || rows.length === 0) return;
+        const raw = rows[0]?.value;
+        if (!raw) return;
+        const parsed = typeof raw === 'string' ? JSON.parse(raw) : raw;
+        if (!parsed || typeof parsed !== 'object') return;
+        if (parsed.active === false) return;
+        const level = parsed.level === 'red' || parsed.level === 'yellow' || parsed.level === 'green' ? parsed.level : 'green';
+        const title = typeof parsed.title === 'string' && parsed.title.trim() ? parsed.title : 'Service Status: Operational';
+        const message = typeof parsed.message === 'string' && parsed.message.trim() ? parsed.message : '';
+        const supportLine =
+          level === 'red' && typeof parsed.supportLine === 'string' && parsed.supportLine.trim()
+            ? parsed.supportLine
+            : null;
+        setPublicSystemStatus({ level, title, message, supportLine });
+      } catch {
+        // Keep landing page resilient; status strip is optional.
+      }
+    };
+    loadPublicSystemStatus();
+  }, []);
 
   const features = [
     {
@@ -90,6 +133,29 @@ export default function App() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-slate-950 text-white antialiased">
+      {publicSystemStatus && (
+        <div
+          className={`border-b px-4 py-3 sm:px-6 ${
+            publicSystemStatus.level === 'red'
+              ? 'bg-rose-50 border-rose-200 text-rose-950'
+              : publicSystemStatus.level === 'yellow'
+                ? 'bg-amber-50 border-amber-200 text-amber-950'
+                : 'bg-emerald-50 border-emerald-200 text-emerald-950'
+          }`}
+          role="status"
+          aria-live={publicSystemStatus.level === 'red' ? 'assertive' : 'polite'}
+        >
+          <div className="mx-auto max-w-7xl">
+            <p className="text-[11px] font-black uppercase tracking-widest">{publicSystemStatus.title}</p>
+            {publicSystemStatus.message ? (
+              <p className="mt-1 text-sm font-medium leading-relaxed">{publicSystemStatus.message}</p>
+            ) : null}
+            {publicSystemStatus.level === 'red' && publicSystemStatus.supportLine ? (
+              <p className="mt-2 text-xs font-semibold leading-relaxed">{publicSystemStatus.supportLine}</p>
+            ) : null}
+          </div>
+        </div>
+      )}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 sm:py-4 lg:px-8">
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
