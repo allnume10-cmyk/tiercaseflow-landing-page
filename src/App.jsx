@@ -120,12 +120,32 @@ export default function App() {
               >
                 Sign in
               </a>
-              <a
-                href={CONTACT_US_MAILTO}
-                className="min-h-[44px] rounded-2xl border border-white/15 bg-white/5 px-3 py-2 text-center text-xs font-medium text-white transition hover:bg-white/10 sm:min-h-0 sm:px-4 sm:text-sm"
-              >
-                Contact us
-              </a>
+
+              <div className="flex flex-col items-end gap-1">
+                <a
+                  href={CONTACT_US_MAILTO}
+                  className="min-h-[44px] rounded-2xl border border-white/15 bg-white/5 px-3 py-2 text-center text-xs font-medium text-white transition hover:bg-white/10 sm:min-h-0 sm:px-4 sm:text-sm"
+                >
+                  Contact us
+                </a>
+                <div className="flex items-center gap-2 text-[11px] text-slate-300">
+                  <a
+                    href={CONTACT_US_MAILTO}
+                    className="underline decoration-white/25 underline-offset-2 transition hover:text-white hover:decoration-white/60"
+                  >
+                    {CONTACT_US_EMAIL}
+                  </a>
+                  <span className="text-slate-500">•</span>
+                  <a
+                    href={CONTACT_US_PHONE_TEL}
+                    className="underline decoration-white/25 underline-offset-2 transition hover:text-white hover:decoration-white/60"
+                  >
+                    {CONTACT_US_PHONE}
+                  </a>
+                  <span className="text-slate-400">(Mon–Fri, ET)</span>
+                </div>
+              </div>
+
               <a
                 href="#contact"
                 className="min-h-[44px] rounded-2xl border border-white/15 bg-white px-3 py-2 text-center text-xs font-medium text-slate-950 shadow-lg transition hover:scale-[1.02] sm:min-h-0 sm:px-4 sm:text-sm"
