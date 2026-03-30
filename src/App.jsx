@@ -1,6 +1,9 @@
 const APP_URL = 'https://app.tiercaseflow.com'
 const CALENDLY_URL = 'https://calendly.com/andrea-tiercaseflow/30min'
 const CONTACT_US_MAILTO = 'mailto:support@tiercaseflow.com'
+const CONTACT_US_EMAIL = 'support@tiercaseflow.com'
+const CONTACT_US_PHONE = '227-259-4871'
+const CONTACT_US_PHONE_TEL = 'tel:+12272594871'
 const ONBOARDING_FORM_URL = 'https://forms.gle/hSyMZcsoNLzwWXzk9'
 const STRIPE_CHECKOUT_STARTER_URL = 'https://buy.stripe.com/5kQ9AT7Na8hE1c10erbjW00'
 const PRO_QUOTE_FORM_URL =
@@ -70,12 +73,47 @@ export default function App() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-slate-950 text-white antialiased">
       <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 sm:py-4 lg:flex-row lg:items-center lg:justify-between lg:gap-4 lg:px-8">
-          <div className="flex w-full items-center justify-between gap-2 lg:w-auto lg:justify-start">
-            <div className="text-base font-semibold tracking-wide sm:text-lg">
-              <span className="text-white">TIER™</span>
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 sm:py-4 lg:px-8">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex items-center justify-between gap-3">
+              <div className="text-base font-semibold tracking-wide sm:text-lg">
+                <span className="text-white">TIER™</span> <span className="text-slate-300">CaseFlow</span>
+              </div>
+              <div className="flex shrink-0 items-center gap-2 sm:gap-3 lg:hidden">
+                <a
+                  href={APP_URL}
+                  className="min-h-[44px] min-w-[44px] px-2 py-2 text-sm font-medium text-slate-300 transition hover:text-white sm:min-h-0 sm:min-w-0 sm:px-0"
+                >
+                  Sign in
+                </a>
+                <a
+                  href="#contact"
+                  className="min-h-[44px] rounded-2xl border border-white/15 bg-white px-3 py-2 text-center text-xs font-medium text-slate-950 shadow-lg transition hover:scale-[1.02] sm:min-h-0 sm:px-4 sm:text-sm"
+                >
+                  Book a Demo
+                </a>
+              </div>
             </div>
-            <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+
+            <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-slate-300 sm:text-sm lg:flex-1 lg:justify-center lg:text-sm">
+              <a href="#challenges" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
+                Challenges
+              </a>
+              <a href="#features" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
+                Features
+              </a>
+              <a href="#pricing" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
+                Pricing
+              </a>
+              <a href="#onboarding" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
+                Onboarding
+              </a>
+              <a href="#contact" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
+                Demo
+              </a>
+            </nav>
+
+            <div className="hidden shrink-0 items-center gap-2 sm:gap-3 lg:flex">
               <a
                 href={APP_URL}
                 className="min-h-[44px] min-w-[44px] px-2 py-2 text-sm font-medium text-slate-300 transition hover:text-white sm:min-h-0 sm:min-w-0 sm:px-0"
@@ -96,24 +134,6 @@ export default function App() {
               </a>
             </div>
           </div>
-
-          <nav className="flex w-full flex-wrap items-center justify-center gap-x-4 gap-y-2 border-t border-white/5 pt-3 text-xs text-slate-300 sm:text-sm lg:w-auto lg:justify-end lg:border-t-0 lg:pt-0 lg:text-sm">
-            <a href="#challenges" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
-              Challenges
-            </a>
-            <a href="#features" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
-              Features
-            </a>
-            <a href="#pricing" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
-              Pricing
-            </a>
-            <a href="#onboarding" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
-              Onboarding
-            </a>
-            <a href="#contact" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
-              Demo
-            </a>
-          </nav>
         </div>
       </header>
 
@@ -438,6 +458,24 @@ export default function App() {
             >
               Schedule Demo
             </a>
+          </div>
+
+          <div className="mt-6 space-y-2 text-sm text-slate-200">
+            <a
+              href={CONTACT_US_MAILTO}
+              className="underline decoration-white/30 underline-offset-2 transition hover:text-white hover:decoration-white/60"
+            >
+              {CONTACT_US_EMAIL}
+            </a>
+            <div className="text-slate-300">
+              <a
+                href={CONTACT_US_PHONE_TEL}
+                className="underline decoration-white/30 underline-offset-2 transition hover:text-white hover:decoration-white/60"
+              >
+                {CONTACT_US_PHONE}
+              </a>{' '}
+              <span className="text-slate-400">(Mon–Fri, ET)</span>
+            </div>
           </div>
         </div>
       </section>
