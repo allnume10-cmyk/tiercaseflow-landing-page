@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react'
+
 const APP_URL = 'https://app.tiercaseflow.com'
 const CALENDLY_URL = 'https://calendly.com/andrea-tiercaseflow/30min'
 const CONTACT_US_MAILTO = 'mailto:support@tiercaseflow.com'
@@ -16,6 +18,22 @@ const REFUND_POLICY_URL =
   'https://docs.google.com/document/d/1VJVwCsfpCHIetzRmTF_ZuY8PGD2u0GfZ-O-puMhO86A/edit?usp=share_link'
 
 export default function App() {
+  const [showHeaderContact, setShowHeaderContact] = useState(false)
+  const headerContactRef = useRef(null)
+
+  useEffect(() => {
+    if (!showHeaderContact) return
+
+    const onPointerDown = (event) => {
+      if (!headerContactRef.current) return
+      if (headerContactRef.current.contains(event.target)) return
+      setShowHeaderContact(false)
+    }
+
+    window.addEventListener('pointerdown', onPointerDown)
+    return () => window.removeEventListener('pointerdown', onPointerDown)
+  }, [showHeaderContact])
+
   const features = [
     {
       title: 'Case Command Center',
@@ -121,29 +139,41 @@ export default function App() {
                 Sign in
               </a>
 
-              <div className="flex flex-col items-end gap-1">
-                <a
-                  href={CONTACT_US_MAILTO}
+              <div className="relative" ref={headerContactRef}>
+                <button
+                  type="button"
+                  onClick={() => setShowHeaderContact((prev) => !prev)}
+                  aria-expanded={showHeaderContact}
+                  aria-controls="header-contact-panel"
                   className="min-h-[44px] rounded-2xl border border-white/15 bg-white/5 px-3 py-2 text-center text-xs font-medium text-white transition hover:bg-white/10 sm:min-h-0 sm:px-4 sm:text-sm"
                 >
                   Contact us
-                </a>
-                <div className="flex items-center gap-2 text-[11px] text-slate-300">
-                  <a
-                    href={CONTACT_US_MAILTO}
-                    className="underline decoration-white/25 underline-offset-2 transition hover:text-white hover:decoration-white/60"
+                </button>
+
+                {showHeaderContact ? (
+                  <div
+                    id="header-contact-panel"
+                    className="absolute right-0 top-[calc(100%+0.5rem)] w-[min(320px,calc(100vw-2rem))] rounded-2xl border border-white/10 bg-slate-950/95 p-4 text-left shadow-2xl backdrop-blur"
                   >
-                    {CONTACT_US_EMAIL}
-                  </a>
-                  <span className="text-slate-500">•</span>
-                  <a
-                    href={CONTACT_US_PHONE_TEL}
-                    className="underline decoration-white/25 underline-offset-2 transition hover:text-white hover:decoration-white/60"
-                  >
-                    {CONTACT_US_PHONE}
-                  </a>
-                  <span className="text-slate-400">(Mon–Fri, ET)</span>
-                </div>
+                    <div className="space-y-2 text-sm text-slate-200">
+                      <a
+                        href={CONTACT_US_MAILTO}
+                        className="block underline decoration-white/25 underline-offset-2 transition hover:text-white hover:decoration-white/60"
+                      >
+                        {CONTACT_US_EMAIL}
+                      </a>
+                      <div className="text-slate-300">
+                        <a
+                          href={CONTACT_US_PHONE_TEL}
+                          className="underline decoration-white/25 underline-offset-2 transition hover:text-white hover:decoration-white/60"
+                        >
+                          {CONTACT_US_PHONE}
+                        </a>{' '}
+                        <span className="text-slate-400">(Mon–Fri, ET)</span>
+                      </div>
+                    </div>
+                  </div>
+                ) : null}
               </div>
 
               <a
