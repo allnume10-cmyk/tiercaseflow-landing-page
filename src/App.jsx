@@ -356,8 +356,8 @@ export default function App() {
               <p className="text-sm uppercase tracking-[0.2em] text-cyan-200">What that means</p>
               <ul className="mt-5 space-y-4 text-slate-200">
                 <li className="rounded-2xl bg-white/5 px-4 py-3">Clear visibility from intake to closure</li>
-                <li className="rounded-2xl bg-white/5 px-4 py-3">Fewer missed tasks and fewer dropped follow-ups</li>
-                <li className="rounded-2xl bg-white/5 px-4 py-3">Better communication with attorneys</li>
+                <li className="rounded-2xl bg-white/5 px-4 py-3">Avoid missed tasks and follow-ups</li>
+                <li className="rounded-2xl bg-white/5 px-4 py-3">Enhanced communication with attorneys</li>
                 <li className="rounded-2xl bg-white/5 px-4 py-3">More consistency, structure, and billable control</li>
               </ul>
             </div>
