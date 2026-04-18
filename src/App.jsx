@@ -270,7 +270,7 @@ export default function App() {
             </p>
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-              TIER CaseFlow is a real-time intelligence platform that helps investigators manage cases, track
+              TIER CaseFlow is a real-time intelligence platform that helps criminal investigators manage cases, track
               activities, monitor deadlines, and streamline workflow from intake to closure—ensuring no work goes
               unbilled.
             </p>
