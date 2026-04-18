@@ -488,6 +488,9 @@ export default function App() {
                   Most Popular
                 </span>
               </div>
+              <p className="mt-2 text-sm font-medium text-cyan-100">
+                Everything in Starter, plus hands-on advisory and support.
+              </p>
               <div className="mt-4 flex items-end gap-2">
                 <span className="text-2xl font-semibold leading-tight">Operational Advisory &amp; Support</span>
               </div>
