@@ -7,7 +7,7 @@ const CONTACT_US_EMAIL = 'support@tiercaseflow.com'
 const CONTACT_US_PHONE = '227-259-4871'
 const CONTACT_US_PHONE_TEL = 'tel:+12272594871'
 const ONBOARDING_FORM_URL = 'https://forms.gle/hSyMZcsoNLzwWXzk9'
-const STRIPE_CHECKOUT_STARTER_URL = 'https://buy.stripe.com/5kQ9AT7Na8hE1c10erbjW00'
+const STRIPE_CHECKOUT_STARTER_URL = 'https://buy.stripe.com/00w5kDaZmapMcUJaT5bjW05'
 const PRO_QUOTE_FORM_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLSeRZr_KctWw16dkkHiIjhxA9ZHaOe0AijFkOGBRvSFHf0ExaQ/viewform?usp=publish-editor'
 const TERMS_URL =
@@ -462,7 +462,7 @@ export default function App() {
             <div className="rounded-[32px] border border-white/10 bg-slate-900/70 p-8 shadow-xl">
               <p className="text-sm uppercase tracking-[0.2em] text-slate-400">Starter</p>
               <div className="mt-4 flex items-end gap-2">
-                <span className="text-5xl font-semibold">$100</span>
+                <span className="text-5xl font-semibold">$75</span>
                 <span className="mb-1 text-slate-400">/ month</span>
               </div>
               <p className="mt-4 text-slate-300">
