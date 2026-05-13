@@ -171,10 +171,12 @@ export default function App() {
                   Sign in
                 </a>
                 <a
-                  href="#contact"
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="min-h-[44px] rounded-2xl border border-white/15 bg-white px-3 py-2 text-center text-xs font-medium text-slate-950 shadow-lg transition hover:scale-[1.02] sm:min-h-0 sm:px-4 sm:text-sm"
                 >
-                  Book a Demo
+                  Schedule Demo
                 </a>
               </div>
             </div>
@@ -243,10 +245,12 @@ export default function App() {
               </div>
 
               <a
-                href="#contact"
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="min-h-[44px] rounded-2xl border border-white/15 bg-white px-3 py-2 text-center text-xs font-medium text-slate-950 shadow-lg transition hover:scale-[1.02] sm:min-h-0 sm:px-4 sm:text-sm"
               >
-                Book a Demo
+                Schedule Demo
               </a>
             </div>
           </div>
@@ -283,7 +287,9 @@ export default function App() {
                 Get Started
               </a>
               <a
-                href="#contact"
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Schedule Demo
