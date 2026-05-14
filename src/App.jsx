@@ -472,11 +472,12 @@ export default function App() {
                 <span className="mb-1 text-slate-400">/ month</span>
               </div>
               <p className="mt-4 text-slate-300">
-                A structured foundation for case tracking, activity logging, and day-to-day organization.
+                A structured foundation for case tracking, activity logging, voucher tracking, and day-to-day organization.
               </p>
               <ul className="mt-6 space-y-3 text-slate-200">
                 <li>• Case tracking</li>
                 <li>• Activity logging</li>
+                <li>• Voucher tracking</li>
                 <li>• Basic reporting</li>
               </ul>
               <a
@@ -496,6 +497,9 @@ export default function App() {
               </div>
               <p className="mt-2 text-xs font-medium leading-relaxed text-cyan-100">
                 Everything in Starter, plus hands-on advisory and support.
+              </p>
+              <p className="mt-2 text-xs font-medium leading-relaxed text-cyan-100/90">
+                Pro includes your monthly CaseFlow subscription in one arrangement. You are not charged a separate Starter fee on top of Pro for the same period. If you later leave Pro but want to keep using the app, you can subscribe to Starter.
               </p>
               <div className="mt-4 flex items-end gap-2">
                 <span className="text-2xl font-semibold leading-tight">Operational Advisory &amp; Support</span>
