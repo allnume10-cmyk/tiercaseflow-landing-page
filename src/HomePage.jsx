@@ -1,81 +1,29 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import { SiteFooter } from './components/SiteFooter'
+import { SiteHeader } from './components/SiteHeader'
+import {
+  APP_URL,
+  CALENDLY_URL,
+  CONTACT_US_EMAIL,
+  CONTACT_US_MAILTO,
+  CONTACT_US_PHONE,
+  CONTACT_US_PHONE_TEL,
+  ONBOARDING_FORM_URL,
+  PRO_QUOTE_FORM_URL,
+  STRIPE_CHECKOUT_STARTER_URL,
+} from './config/site'
 
-const APP_URL = 'https://app.tiercaseflow.com'
-const CALENDLY_URL = 'https://calendly.com/andrea-tiercaseflow/30min'
-const CONTACT_US_MAILTO = 'mailto:support@tiercaseflow.com'
-const CONTACT_US_EMAIL = 'support@tiercaseflow.com'
-const CONTACT_US_PHONE = '227-259-4871'
-const CONTACT_US_PHONE_TEL = 'tel:+12272594871'
-const ONBOARDING_FORM_URL = 'https://forms.gle/hSyMZcsoNLzwWXzk9'
-const STRIPE_CHECKOUT_STARTER_URL = 'https://buy.stripe.com/00w5kDaZmapMcUJaT5bjW05'
-const PRO_QUOTE_FORM_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLSeRZr_KctWw16dkkHiIjhxA9ZHaOe0AijFkOGBRvSFHf0ExaQ/viewform?usp=publish-editor'
-const TERMS_URL =
-  'https://docs.google.com/document/d/1wls41IsUejAfLeTYgflUzXkKGmiklqCCfMIsDRmYG3w/edit?usp=share_link'
-const PRIVACY_POLICY_URL =
-  'https://docs.google.com/document/d/1fOmIvltJkqiWzne3Jy9rs-05EILmtpgO3Eofx8aWQj8/edit?usp=share_link'
-const REFUND_POLICY_URL =
-  'https://docs.google.com/document/d/1VJVwCsfpCHIetzRmTF_ZuY8PGD2u0GfZ-O-puMhO86A/edit?usp=share_link'
-const SYSTEM_STATUS_KEY = 'system_status_banner_v1'
-const SUPABASE_URL = 'https://hezgzrgwuegovztqxsts.supabase.co'
-const SUPABASE_ANON_KEY =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhlemd6cmd3dWVnb3Z6dHF4c3RzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjcwMjEyNTMsImV4cCI6MjA4MjU5NzI1M30.7Oph6m2BlYmpUTa465Ak2eu4I5VEKh6Amvkvjh6AG9s'
-
-export default function App() {
-  const [showHeaderContact, setShowHeaderContact] = useState(false)
-  const headerContactRef = useRef(null)
-  const [publicSystemStatus, setPublicSystemStatus] = useState(null)
+export default function HomePage() {
+  const location = useLocation()
 
   useEffect(() => {
-    if (!showHeaderContact) return
-
-    const onPointerDown = (event) => {
-      if (!headerContactRef.current) return
-      if (headerContactRef.current.contains(event.target)) return
-      setShowHeaderContact(false)
+    if (!location.hash) return
+    const target = document.querySelector(location.hash)
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
-
-    window.addEventListener('pointerdown', onPointerDown)
-    return () => window.removeEventListener('pointerdown', onPointerDown)
-  }, [showHeaderContact])
-
-  useEffect(() => {
-    const loadPublicSystemStatus = async () => {
-      try {
-        const query = new URLSearchParams({
-          select: 'value',
-          key: `eq.${SYSTEM_STATUS_KEY}`,
-          limit: '1',
-        });
-        const res = await fetch(`${SUPABASE_URL}/rest/v1/app_settings?${query.toString()}`, {
-          method: 'GET',
-          headers: {
-            apikey: SUPABASE_ANON_KEY,
-            Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-          },
-        });
-        if (!res.ok) return;
-        const rows = await res.json();
-        if (!Array.isArray(rows) || rows.length === 0) return;
-        const raw = rows[0]?.value;
-        if (!raw) return;
-        const parsed = typeof raw === 'string' ? JSON.parse(raw) : raw;
-        if (!parsed || typeof parsed !== 'object') return;
-        if (parsed.active === false) return;
-        const level = parsed.level === 'red' || parsed.level === 'yellow' || parsed.level === 'green' ? parsed.level : 'green';
-        const title = typeof parsed.title === 'string' && parsed.title.trim() ? parsed.title : 'Service Status: Operational';
-        const message = typeof parsed.message === 'string' && parsed.message.trim() ? parsed.message : '';
-        const supportLine =
-          level === 'red' && typeof parsed.supportLine === 'string' && parsed.supportLine.trim()
-            ? parsed.supportLine
-            : null;
-        setPublicSystemStatus({ level, title, message, supportLine });
-      } catch {
-        // Keep landing page resilient; status strip is optional.
-      }
-    };
-    loadPublicSystemStatus();
-  }, []);
+  }, [location.hash])
 
   const features = [
     {
@@ -133,129 +81,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-slate-950 text-white antialiased">
-      {publicSystemStatus && (
-        <div
-          className={`border-b px-4 py-3 sm:px-6 ${
-            publicSystemStatus.level === 'red'
-              ? 'bg-rose-50 border-rose-200 text-rose-950'
-              : publicSystemStatus.level === 'yellow'
-                ? 'bg-amber-50 border-amber-200 text-amber-950'
-                : 'bg-emerald-50 border-emerald-200 text-emerald-950'
-          }`}
-          role="status"
-          aria-live={publicSystemStatus.level === 'red' ? 'assertive' : 'polite'}
-        >
-          <div className="mx-auto max-w-7xl">
-            <p className="text-[11px] font-black uppercase tracking-widest">{publicSystemStatus.title}</p>
-            {publicSystemStatus.message ? (
-              <p className="mt-1 text-sm font-medium leading-relaxed">{publicSystemStatus.message}</p>
-            ) : null}
-            {publicSystemStatus.level === 'red' && publicSystemStatus.supportLine ? (
-              <p className="mt-2 text-xs font-semibold leading-relaxed">{publicSystemStatus.supportLine}</p>
-            ) : null}
-          </div>
-        </div>
-      )}
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 sm:py-4 lg:px-8">
-          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex items-center justify-between gap-3">
-              <div className="text-base font-semibold tracking-wide sm:text-lg">
-                <span className="text-white">TIER™</span> <span className="text-slate-300">CaseFlow</span>
-              </div>
-              <div className="flex shrink-0 items-center gap-2 sm:gap-3 lg:hidden">
-                <a
-                  href={APP_URL}
-                  className="min-h-[44px] min-w-[44px] px-2 py-2 text-sm font-medium text-slate-300 transition hover:text-white sm:min-h-0 sm:min-w-0 sm:px-0"
-                >
-                  Sign in
-                </a>
-                <a
-                  href={CALENDLY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="min-h-[44px] rounded-2xl border border-white/15 bg-white px-3 py-2 text-center text-xs font-medium text-slate-950 shadow-lg transition hover:scale-[1.02] sm:min-h-0 sm:px-4 sm:text-sm"
-                >
-                  Schedule Demo
-                </a>
-              </div>
-            </div>
+      <SiteHeader currentPage="home" />
 
-            <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-slate-300 sm:text-sm lg:flex-1 lg:justify-center lg:text-sm">
-              <a href="#challenges" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
-                Challenges
-              </a>
-              <a href="#features" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
-                Features
-              </a>
-              <a href="#pricing" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
-                Pricing
-              </a>
-              <a href="#onboarding" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
-                Onboarding
-              </a>
-              <a href="#contact" className="min-h-[44px] py-2 transition hover:text-white sm:min-h-0 sm:py-0">
-                Demo
-              </a>
-            </nav>
-
-            <div className="hidden shrink-0 items-center gap-2 sm:gap-3 lg:flex">
-              <a
-                href={APP_URL}
-                className="min-h-[44px] min-w-[44px] px-2 py-2 text-sm font-medium text-slate-300 transition hover:text-white sm:min-h-0 sm:min-w-0 sm:px-0"
-              >
-                Sign in
-              </a>
-
-              <div className="relative" ref={headerContactRef}>
-                <button
-                  type="button"
-                  onClick={() => setShowHeaderContact((prev) => !prev)}
-                  aria-expanded={showHeaderContact}
-                  aria-controls="header-contact-panel"
-                  className="min-h-[44px] rounded-2xl border border-white/15 bg-white/5 px-3 py-2 text-center text-xs font-medium text-white transition hover:bg-white/10 sm:min-h-0 sm:px-4 sm:text-sm"
-                >
-                  Contact us
-                </button>
-
-                {showHeaderContact ? (
-                  <div
-                    id="header-contact-panel"
-                    className="absolute right-0 top-[calc(100%+0.5rem)] w-[min(320px,calc(100vw-2rem))] rounded-2xl border border-white/10 bg-slate-950/95 p-4 text-left shadow-2xl backdrop-blur"
-                  >
-                    <div className="space-y-2 text-sm text-slate-200">
-                      <a
-                        href={CONTACT_US_MAILTO}
-                        className="block underline decoration-white/25 underline-offset-2 transition hover:text-white hover:decoration-white/60"
-                      >
-                        {CONTACT_US_EMAIL}
-                      </a>
-                      <div className="text-slate-300">
-                        <a
-                          href={CONTACT_US_PHONE_TEL}
-                          className="underline decoration-white/25 underline-offset-2 transition hover:text-white hover:decoration-white/60"
-                        >
-                          {CONTACT_US_PHONE}
-                        </a>{' '}
-                        <span className="text-slate-400">(Mon–Fri, ET)</span>
-                      </div>
-                    </div>
-                  </div>
-                ) : null}
-              </div>
-
-              <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="min-h-[44px] rounded-2xl border border-white/15 bg-white px-3 py-2 text-center text-xs font-medium text-slate-950 shadow-lg transition hover:scale-[1.02] sm:min-h-0 sm:px-4 sm:text-sm"
-              >
-                Schedule Demo
-              </a>
-            </div>
-          </div>
-        </div>
-      </header>
 
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.18),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(168,85,247,0.16),transparent_30%)]" />
@@ -609,49 +436,8 @@ export default function App() {
         </div>
       </section>
 
-      <footer className="border-t border-white/10 bg-slate-950">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-8 text-sm text-slate-400 lg:flex-row lg:items-start lg:justify-between lg:px-8">
-          <div>
-            <p>© 2026 Tactics for Improved Efficiency & Results, LLC. All rights reserved.</p>
-            <ul className="mt-4 list-disc space-y-1.5 pl-5 text-slate-300">
-              <li>
-                <a
-                  href={TERMS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline decoration-white/30 underline-offset-2 transition hover:text-white hover:decoration-white/60"
-                >
-                  Terms &amp; Conditions
-                </a>
-              </li>
-              <li>
-                <a
-                  href={PRIVACY_POLICY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline decoration-white/30 underline-offset-2 transition hover:text-white hover:decoration-white/60"
-                >
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href={REFUND_POLICY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline decoration-white/30 underline-offset-2 transition hover:text-white hover:decoration-white/60"
-                >
-                  Refund Policy
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-1 text-left lg:max-w-md lg:text-right">
-            <p>TIER™ is a trademark of Tactics for Improved Efficiency & Results, LLC.</p>
-            <p>TIER CaseFlow is a software platform provided by TIER.</p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
+
     </div>
   )
 }
