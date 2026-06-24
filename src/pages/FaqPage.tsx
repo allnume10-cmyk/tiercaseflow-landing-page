@@ -3,7 +3,7 @@ import { FaqAccordion } from '../components/FaqAccordion'
 import { SiteFooter } from '../components/SiteFooter'
 import { SiteHeader } from '../components/SiteHeader'
 import {
-  CALENDLY_URL,
+  SCHEDULE_DEMO_URL,
   CONTACT_US_EMAIL,
   CONTACT_US_MAILTO,
   CONTACT_US_PHONE,
@@ -107,7 +107,7 @@ export function FaqPage() {
                 Email Support
               </a>
               <a
-                href={CALENDLY_URL}
+                href={SCHEDULE_DEMO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"

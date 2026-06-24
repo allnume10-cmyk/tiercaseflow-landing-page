@@ -12,3 +12,11 @@ html {
 body {
   overflow-x: hidden;
 }
+
+.founder-signature {
+  font-family: 'Dancing Script', 'Segoe Script', 'Brush Script MT', cursive;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}

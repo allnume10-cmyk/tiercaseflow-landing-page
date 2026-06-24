@@ -1,6 +1,6 @@
 import {
   APP_URL,
-  CALENDLY_URL,
+  SCHEDULE_DEMO_URL,
   CONTACT_US_EMAIL,
   CONTACT_US_MAILTO,
   CONTACT_US_PHONE,
@@ -44,13 +44,13 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         id: 'who-is-it-for',
         question: 'Who is TIER CaseFlow built for?',
         answer:
-          'TIER CaseFlow is built for criminal defense investigators and the firms or offices that support themùespecially CJA and court-appointed workflows. Solo investigators, small teams, and firms with administrators who assign cases and monitor workload all use the same platform with role-appropriate views.',
+          'TIER CaseFlow is built for criminal defense investigators and the firms or offices that support them?especially CJA and court-appointed workflows. Solo investigators, small teams, and firms with administrators who assign cases and monitor workload all use the same platform with role-appropriate views.',
       },
       {
         id: 'learn-new-system',
         question: 'Will I have to learn a new system?',
         answer:
-          'The goal is not to change how you investigateùit is to organize how you already work. Most users start with cases, activity logs, and reports they already track today, just in one place.',
+          'The goal is not to change how you investigate?it is to organize how you already work. Most users start with cases, activity logs, and reports they already track today, just in one place.',
       },
       {
         id: 'new-investigators',
@@ -61,7 +61,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       {
         id: 'demo-vs-starter',
         question: 'What is the difference between a demo and signing up for Starter?',
-        answer: `A demo is a live walkthrough with our team so you can see whether the platform fits your workflowù[schedule a demo](${CALENDLY_URL}) or visit [tiercaseflow.com](${SITE_URL}). Starter is a paid subscription that gives you your own account at [app.tiercaseflow.com](${APP_URL}) so you can enter cases, log activity, and run reports on your real work.`,
+        answer: `A demo is a live walkthrough with our team so you can see whether the platform fits your workflow?[schedule a demo](${SCHEDULE_DEMO_URL}) or visit [tiercaseflow.com](${SITE_URL}). Starter is a paid subscription that gives you your own account at [app.tiercaseflow.com](${APP_URL}) so you can enter cases, log activity, and run reports on your real work.`,
       },
       {
         id: 'install-required',
@@ -96,7 +96,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         id: 'import-duration',
         question: 'How long would it take to import my cases?',
         answer:
-          'It depends on how many cases you have and how your information is stored todayùspreadsheets, email, handwritten notes, or another system. We can scope timing after we understand your sources.',
+          'It depends on how many cases you have and how your information is stored today?spreadsheets, email, handwritten notes, or another system. We can scope timing after we understand your sources.',
       },
       {
         id: 'spreadsheet-import',
@@ -130,7 +130,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         id: 'back-office-support',
         question: 'What does back-office support include?',
         answer:
-          'It depends on the level of support you needùfor example workflow monitoring, reporting, voucher tracking, and helping keep cases moving. The Pro questionnaire helps us tailor advisory support appropriately.',
+          'It depends on the level of support you need?for example workflow monitoring, reporting, voucher tracking, and helping keep cases moving. The Pro questionnaire helps us tailor advisory support appropriately.',
       },
       {
         id: 'training',
@@ -147,7 +147,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       {
         id: 'how-much-cost',
         question: 'How much does it cost?',
-        answer: `Starter system access is $75 per month on our public [Pricing](/#pricing) page. Pro includes hands-on advisory and support in one arrangement. Onboarding and back-office projects are customized by caseload and data sources (many projects fall in the $250ù$750 range). ${PRICING_DISCLAIMER}`,
+        answer: `Starter system access is $75 per month on our public [Pricing](/#pricing) page. Pro includes hands-on advisory and support in one arrangement. Onboarding and back-office projects are customized by caseload and data sources (many projects fall in the $250?$750 range). ${PRICING_DISCLAIMER}`,
       },
       {
         id: 'starter-vs-pro',
@@ -157,7 +157,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       {
         id: 'how-sign-up',
         question: 'How do I sign up?',
-        answer: `Visit [tiercaseflow.com](${SITE_URL}), review [Pricing](/#pricing), and choose Starter checkout or request a Pro quote. You can also [schedule a demo](${CALENDLY_URL}) if you want a walkthrough first.`,
+        answer: `Visit [tiercaseflow.com](${SITE_URL}), review [Pricing](/#pricing), and choose Starter checkout or request a Pro quote. You can also [schedule a demo](${SCHEDULE_DEMO_URL}) if you want a walkthrough first.`,
       },
       {
         id: 'system-only',
@@ -178,7 +178,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       {
         id: 'support-starter-vs-pro',
         question: 'What support is included with Starter vs. Pro?',
-        answer: `Starter includes standard product support by email at [${CONTACT_US_EMAIL}](${CONTACT_US_MAILTO}) during business hours (MonùFri, ET) for account and how-to questions. Pro adds agreed advisory and operational supportùsuch as workflow check-ins, report preparation help, and voucher tracking assistanceùbased on your signed scope. Neither plan is a 24/7 emergency hotline unless separately agreed in writing.`,
+        answer: `Starter includes standard product support by email at [${CONTACT_US_EMAIL}](${CONTACT_US_MAILTO}) during business hours (Mon?Fri, ET) for account and how-to questions. Pro adds agreed advisory and operational support?such as workflow check-ins, report preparation help, and voucher tracking assistance?based on your signed scope. Neither plan is a 24/7 emergency hotline unless separately agreed in writing.`,
       },
       {
         id: 'features-later',
@@ -233,7 +233,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         id: 'voucher-tracking',
         question: 'How does voucher tracking work?',
         answer:
-          'Voucher Hub shows voucher status by segment (for example missing, submitted, or paid) so you can see which cases need attention. You update status in the case jacket as work progresses. TIER CaseFlow does not replace the federal or local CJA voucher systemùit helps you stay organized so fewer billable items are overlooked.',
+          'Voucher Hub shows voucher status by segment (for example missing, submitted, or paid) so you can see which cases need attention. You update status in the case jacket as work progresses. TIER CaseFlow does not replace the federal or local CJA voucher system?it helps you stay organized so fewer billable items are overlooked.',
       },
       {
         id: 'voucher-reports',
@@ -245,19 +245,19 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         id: 'ai-assist',
         question: 'Does AI write my reports or vouchers for me?',
         answer:
-          'No. Where AI is offered (for example suggested voucher narrative wording), it produces assistive text only. You must review and edit every line before copying into your official voucher or report systems. AI output may be incomplete or unsuitable for a given matterùyou remain responsible for what you submit.',
+          'No. Where AI is offered (for example suggested voucher narrative wording), it produces assistive text only. You must review and edit every line before copying into your official voucher or report systems. AI output may be incomplete or unsuitable for a given matter?you remain responsible for what you submit.',
       },
       {
         id: 'reports-to-attorneys',
         question: 'Can I send reports to attorneys from the app?',
         answer:
-          'Yes. Report Hub includes reports such as Weekly Status and Aged Voucher Audit that you can generate, preview, edit, and send by email to counsel from within the app (subject to your firmùs email and reply-routing settings). A sent-reports log helps you track recent deliveries.',
+          'Yes. Report Hub includes reports such as Weekly Status and Aged Voucher Audit that you can generate, preview, edit, and send by email to counsel from within the app (subject to your firm?s email and reply-routing settings). A sent-reports log helps you track recent deliveries.',
       },
       {
         id: 'attorney-communication',
         question: 'How do attorneys and investigators communicate?',
         answer:
-          'The Communication Hub helps match inbound attorney messages to cases and keep correspondence tied to the matter. Investigators can configure reply routing from My Profile (for example TierCaseFlow inbox only, personal/firm email, or both). Email is not replacedùit is organized alongside case context.',
+          'The Communication Hub helps match inbound attorney messages to cases and keep correspondence tied to the matter. Investigators can configure reply routing from My Profile (for example TierCaseFlow inbox only, personal/firm email, or both). Email is not replaced?it is organized alongside case context.',
       },
       {
         id: 'court-dates-deadlines',
@@ -298,12 +298,12 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       {
         id: 'contact-questions',
         question: 'How do we contact you if we have questions?',
-        answer: `Email [${CONTACT_US_EMAIL}](${CONTACT_US_MAILTO}), call ${CONTACT_US_PHONE} (MonùFri, ET), or [schedule a demo](${CALENDLY_URL}) from the website. We respond as quickly as possible during business hours.`,
+        answer: `Email [${CONTACT_US_EMAIL}](${CONTACT_US_MAILTO}), call ${CONTACT_US_PHONE} (Mon?Fri, ET), or [schedule a demo](${SCHEDULE_DEMO_URL}) from the website. We respond as quickly as possible during business hours.`,
       },
       {
         id: 'support-response-time',
         question: 'How fast do you respond to support requests?',
-        answer: `We aim to respond to email at [${CONTACT_US_EMAIL}](${CONTACT_US_MAILTO}) within one business day for standard questions (MonùFri, ET). Complex onboarding or Pro matters may take longer while we review your materials. For urgent production issues, include "urgent" in the subject line and we will prioritize when possibleùthis is best-effort support, not a guaranteed SLA.`,
+        answer: `We aim to respond to email at [${CONTACT_US_EMAIL}](${CONTACT_US_MAILTO}) within one business day for standard questions (Mon?Fri, ET). Complex onboarding or Pro matters may take longer while we review your materials. For urgent production issues, include "urgent" in the subject line and we will prioritize when possible?this is best-effort support, not a guaranteed SLA.`,
       },
       {
         id: 'status-page',

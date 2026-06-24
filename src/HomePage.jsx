@@ -1,16 +1,16 @@
 import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { SiteFooter } from './components/SiteFooter'
 import { SiteHeader } from './components/SiteHeader'
 import {
   APP_URL,
-  CALENDLY_URL,
   CONTACT_US_EMAIL,
   CONTACT_US_MAILTO,
   CONTACT_US_PHONE,
   CONTACT_US_PHONE_TEL,
   ONBOARDING_FORM_URL,
   PRO_QUOTE_FORM_URL,
+  SCHEDULE_DEMO_URL,
   STRIPE_CHECKOUT_STARTER_URL,
 } from './config/site'
 
@@ -114,7 +114,7 @@ export default function HomePage() {
                 Get Started
               </a>
               <a
-                href={CALENDLY_URL}
+                href={SCHEDULE_DEMO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
@@ -291,17 +291,19 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="mt-12 grid gap-8 lg:grid-cols-3">
-            <div className="rounded-[32px] border border-white/10 bg-slate-900/70 p-8 shadow-xl">
-              <p className="text-sm uppercase tracking-[0.2em] text-slate-400">Starter</p>
-              <div className="mt-4 flex items-end gap-2">
-                <span className="text-5xl font-semibold">$75</span>
-                <span className="mb-1 text-slate-400">/ month</span>
+          <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+            <div className="flex h-full flex-col rounded-[32px] border border-white/10 bg-slate-900/70 p-8 shadow-xl">
+              <div className="flex min-h-[7.5rem] flex-col">
+                <p className="text-sm uppercase tracking-[0.2em] text-slate-400">Access Only</p>
+                <div className="mt-auto flex items-end gap-2 pt-4">
+                  <span className="text-5xl font-semibold leading-none">$75</span>
+                  <span className="mb-1 text-sm text-slate-400">/ month</span>
+                </div>
               </div>
-              <p className="mt-4 text-slate-300">
+              <p className="mt-4 text-sm leading-relaxed text-slate-300">
                 A structured foundation for case tracking, activity logging, voucher tracking, and day-to-day organization.
               </p>
-              <ul className="mt-6 space-y-3 text-slate-200">
+              <ul className="mt-6 space-y-3 text-sm text-slate-200">
                 <li>• Case tracking</li>
                 <li>• Activity logging</li>
                 <li>• Voucher tracking</li>
@@ -309,38 +311,41 @@ export default function HomePage() {
               </ul>
               <a
                 href={STRIPE_CHECKOUT_STARTER_URL}
-                className="mt-8 inline-block rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                className="mt-auto inline-block rounded-2xl border border-white/15 bg-white/5 px-5 py-3 pt-8 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Choose Starter
+                Choose Access Only
               </a>
             </div>
 
-            <div className="rounded-[32px] border border-cyan-400/30 bg-cyan-400/10 p-8 shadow-2xl ring-1 ring-cyan-400/20">
-              <div className="flex items-center justify-between gap-4">
-                <p className="text-sm uppercase tracking-[0.2em] text-cyan-200">Pro</p>
-                <span className="rounded-full bg-cyan-300/15 px-3 py-1 text-xs font-medium text-cyan-100">
-                  Most Popular
-                </span>
+            <div className="flex h-full flex-col rounded-[32px] border border-cyan-400/30 bg-cyan-400/10 p-8 shadow-2xl ring-1 ring-cyan-400/20">
+              <div className="flex min-h-[7.5rem] flex-col">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs uppercase tracking-[0.14em] leading-snug text-cyan-200">
+                      Operational Advisory &amp; Support
+                    </p>
+                    <p className="mt-2 whitespace-nowrap text-xs font-medium text-cyan-100">(Premium Support)</p>
+                  </div>
+                  <span className="shrink-0 rounded-full bg-cyan-300/15 px-3 py-1 text-xs font-medium text-cyan-100">
+                    Most Popular
+                  </span>
+                </div>
               </div>
-              <p className="mt-2 text-xs font-medium leading-relaxed text-cyan-100">
-                Everything in Starter, plus hands-on advisory and support.
+              <p className="mt-4 text-sm leading-relaxed text-cyan-100">
+                Everything in Access Only, plus hands-on advisory and support.
               </p>
-              <p className="mt-2 text-xs font-medium leading-relaxed text-cyan-100/90">
-                Pro includes your monthly CaseFlow subscription in one arrangement. You are not charged a separate Starter fee on top of Pro for the same period. If you later leave Pro but want to keep using the app, you can subscribe to Starter.
+              <p className="mt-3 text-sm leading-relaxed text-cyan-100/90">
+                Pro includes your monthly CaseFlow subscription in one arrangement. You are not charged a separate Access Only fee on top of Pro for the same period. If you later leave Pro but want to keep using the app, you can subscribe to Access Only.
               </p>
-              <div className="mt-4 flex items-end gap-2">
-                <span className="text-2xl font-semibold leading-tight">Operational Advisory &amp; Support</span>
-              </div>
-              <p className="mt-2 text-sm font-medium text-cyan-100">(Premium Support)</p>
-              <p className="mt-4 text-slate-100">
+              <p className="mt-4 text-sm leading-relaxed text-slate-100">
                 A hands-on support service designed to help manage workflow, monitor case progress, and ensure
                 nothing falls through the cracks.
               </p>
-              <p className="mt-4 text-slate-100">
+              <p className="mt-3 text-sm leading-relaxed text-slate-100">
                 Designed for investigators who want ongoing oversight, structure, and support as their caseload
                 grows—while ensuring cases continue to move and revenue is consistently captured.
               </p>
-              <ul className="mt-6 space-y-3 text-slate-100">
+              <ul className="mt-6 space-y-3 text-sm text-slate-100">
                 <li>• Full case management</li>
                 <li>• Weekly reports</li>
                 <li>• Voucher monitoring</li>
@@ -350,20 +355,22 @@ export default function HomePage() {
                 href={PRO_QUOTE_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 inline-block rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg transition hover:scale-[1.02]"
+                className="mt-auto inline-block rounded-2xl bg-white px-5 py-3 pt-8 text-sm font-semibold text-slate-950 shadow-lg transition hover:scale-[1.02]"
               >
                 Request Pro Quote
               </a>
             </div>
-            <div id="onboarding" className="rounded-[32px] border border-white/10 bg-slate-900/70 p-8 shadow-xl">
-              <div className="flex items-center justify-between gap-4">
-                <p className="text-sm uppercase tracking-[0.2em] text-slate-300">White-Glove Onboarding</p>
-                <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-slate-200">Optional</span>
+            <div id="onboarding" className="flex h-full flex-col rounded-[32px] border border-white/10 bg-slate-900/70 p-8 shadow-xl">
+              <div className="flex min-h-[7.5rem] flex-col">
+                <div className="flex items-center justify-between gap-4">
+                  <p className="text-sm uppercase tracking-[0.2em] text-slate-300">White-Glove Onboarding</p>
+                  <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-slate-200">Optional</span>
+                </div>
               </div>
-              <p className="mt-4 text-slate-300">
+              <p className="mt-4 text-sm leading-relaxed text-slate-300">
                 We migrate existing cases and organize your system so you start with a clean, structured workflow.
               </p>
-              <p className="mt-4 text-slate-300">
+              <p className="mt-3 text-sm leading-relaxed text-slate-300">
                 Pricing is custom based on caseload and data sources; most projects range between $250-$750.
               </p>
               <div className="mt-6 rounded-2xl border border-white/10 bg-slate-950/60 p-4">
@@ -379,10 +386,32 @@ export default function HomePage() {
                 href={ONBOARDING_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 inline-block rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                className="mt-auto inline-block rounded-2xl border border-white/15 bg-white/5 px-5 py-3 pt-8 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Request Onboarding Quote
               </a>
+            </div>
+
+            <div className="flex h-full flex-col rounded-[32px] border border-emerald-400/25 bg-gradient-to-b from-emerald-400/10 to-violet-400/5 p-8 shadow-xl ring-1 ring-emerald-400/15">
+              <div className="flex min-h-[7.5rem] flex-col">
+                <p className="text-sm uppercase tracking-[0.2em] text-emerald-200">Founding Members Program</p>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-slate-200">
+                Become one of ten Founding Investigators and help shape what&apos;s next while receiving exclusive
+                onboarding and support benefits.
+              </p>
+              <ul className="mt-6 space-y-3 text-sm text-slate-200">
+                <li>• 3 months advisory support included</li>
+                <li>• 50% off white-glove onboarding</li>
+                <li>• Direct founder collaboration</li>
+                <li>• Limited to 10 Founding Investigators</li>
+              </ul>
+              <Link
+                to="/founding-member"
+                className="mt-auto inline-block rounded-2xl border border-emerald-300/30 bg-emerald-400/10 px-5 py-3 pt-8 text-sm font-semibold text-emerald-100 transition hover:bg-emerald-400/20"
+              >
+                Learn More
+              </Link>
             </div>
           </div>
         </div>
@@ -407,7 +436,7 @@ export default function HomePage() {
               Email Us
             </a>
             <a
-              href={CALENDLY_URL}
+              href={SCHEDULE_DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"

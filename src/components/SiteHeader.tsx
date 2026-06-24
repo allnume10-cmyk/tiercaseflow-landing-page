@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   APP_URL,
-  CALENDLY_URL,
+  SCHEDULE_DEMO_URL,
   CONTACT_US_EMAIL,
   CONTACT_US_MAILTO,
   CONTACT_US_PHONE,
@@ -10,7 +10,7 @@ import {
 } from '../config/site'
 
 type SiteHeaderProps = {
-  currentPage: 'home' | 'faq'
+  currentPage: 'home' | 'faq' | 'founding-member'
 }
 
 const NAV_LINK_CLASS =
@@ -48,6 +48,11 @@ export function SiteHeader({ currentPage }: SiteHeaderProps) {
       ? `${NAV_LINK_CLASS} font-medium text-white`
       : NAV_LINK_CLASS
 
+  const foundingClass =
+    currentPage === 'founding-member'
+      ? `${NAV_LINK_CLASS} font-medium text-white`
+      : NAV_LINK_CLASS
+
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur">
       <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 sm:py-4 lg:px-8">
@@ -65,7 +70,7 @@ export function SiteHeader({ currentPage }: SiteHeaderProps) {
                 Sign in
               </a>
               <a
-                href={CALENDLY_URL}
+                href={SCHEDULE_DEMO_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="min-h-[44px] rounded-2xl border border-white/15 bg-white px-3 py-2 text-center text-xs font-medium text-slate-950 shadow-lg transition hover:scale-[1.02] sm:min-h-0 sm:px-4 sm:text-sm"
@@ -82,6 +87,9 @@ export function SiteHeader({ currentPage }: SiteHeaderProps) {
             {navLink('onboarding', 'Onboarding')}
             <Link to="/faq" className={faqClass}>
               FAQ
+            </Link>
+            <Link to="/founding-member" className={foundingClass}>
+              Founding Members Program
             </Link>
             {navLink('contact', 'Demo')}
           </nav>
@@ -132,7 +140,7 @@ export function SiteHeader({ currentPage }: SiteHeaderProps) {
             </div>
 
             <a
-              href={CALENDLY_URL}
+              href={SCHEDULE_DEMO_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="min-h-[44px] rounded-2xl border border-white/15 bg-white px-3 py-2 text-center text-xs font-medium text-slate-950 shadow-lg transition hover:scale-[1.02] sm:min-h-0 sm:px-4 sm:text-sm"
