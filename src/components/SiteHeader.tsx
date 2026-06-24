@@ -89,9 +89,8 @@ export function SiteHeader({ currentPage }: SiteHeaderProps) {
               FAQ
             </Link>
             <Link to="/founding-member" className={foundingClass}>
-              Founding Members Program
+              Founding Members
             </Link>
-            {navLink('contact', 'Demo')}
           </nav>
 
           <div className="hidden shrink-0 items-center gap-2 sm:gap-3 lg:flex">

@@ -66,10 +66,10 @@ export default function HomePage() {
   ]
 
   const benefits = [
-    'Stay on top of every case',
-    'Never miss a voucher or deadline',
+    'Maintain visibility across every case',
+    'Centralize voucher tracking',
     'Keep attorneys informed without extra work',
-    'Focus on investigations, not admin',
+    'Help track tasks and deadlines',
   ]
 
   const steps = [
@@ -77,6 +77,7 @@ export default function HomePage() {
     'Track activities and tasks',
     'Monitor progress and deadlines',
     'Generate reports and stay organized',
+    'Submit vouchers and capture revenue',
   ]
 
   return (
@@ -189,7 +190,7 @@ export default function HomePage() {
               <p className="text-sm uppercase tracking-[0.2em] text-cyan-200">What that means</p>
               <ul className="mt-5 space-y-4 text-slate-200">
                 <li className="rounded-2xl bg-white/5 px-4 py-3">Clear visibility from intake to closure</li>
-                <li className="rounded-2xl bg-white/5 px-4 py-3">Avoid missed tasks and follow-ups</li>
+                <li className="rounded-2xl bg-white/5 px-4 py-3">Keep tasks and follow-ups visible</li>
                 <li className="rounded-2xl bg-white/5 px-4 py-3">Enhanced communication with attorneys</li>
                 <li className="rounded-2xl bg-white/5 px-4 py-3">More consistency, structure, and billable control</li>
               </ul>
@@ -209,23 +210,29 @@ export default function HomePage() {
                 Created from real investigative workflows, not theory.
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-300">
-                Built from real investigative workflows, TIER CaseFlow is designed to keep cases moving, eliminate
-                missed tasks, keep attorneys informed, and ensure no revenue is left on the table.
+                Built from real investigative workflows, TIER CaseFlow is designed to keep cases moving, help track
+                tasks and deadlines more effectively, keep attorneys informed, and ensure no revenue is left on the
+                table.
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              {benefits.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-3xl border border-white/10 bg-slate-950/60 p-6 shadow-lg"
-                >
-                  <div className="text-2xl" aria-hidden="true">
-                    ✔
+            <div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {benefits.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-3xl border border-white/10 bg-slate-950/60 p-6 shadow-lg"
+                  >
+                    <div className="text-2xl" aria-hidden="true">
+                      ✔
+                    </div>
+                    <p className="mt-3 text-base leading-7 text-slate-200">{item}</p>
                   </div>
-                  <p className="mt-3 text-base leading-7 text-slate-200">{item}</p>
-                </div>
-              ))}
+                ))}
+              </div>
+              <p className="mt-6 text-lg leading-8 text-slate-300">
+                The result? More time focused on investigations and less time managing administrative tasks.
+              </p>
             </div>
           </div>
         </div>
@@ -266,7 +273,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
             {steps.map((step, index) => (
               <div
                 key={step}
@@ -334,23 +341,22 @@ export default function HomePage() {
               <p className="mt-4 text-sm leading-relaxed text-cyan-100">
                 Everything in Access Only, plus hands-on advisory and support.
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-cyan-100/90">
-                Pro includes your monthly CaseFlow subscription in one arrangement. You are not charged a separate Access Only fee on top of Pro for the same period. If you later leave Pro but want to keep using the app, you can subscribe to Access Only.
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-slate-100">
-                A hands-on support service designed to help manage workflow, monitor case progress, and ensure
-                nothing falls through the cracks.
-              </p>
               <p className="mt-3 text-sm leading-relaxed text-slate-100">
                 Designed for investigators who want ongoing oversight, structure, and support as their caseload
-                grows—while ensuring cases continue to move and revenue is consistently captured.
+                grows—helping maintain operational visibility and support consistent revenue capture.
               </p>
-              <ul className="mt-6 space-y-3 text-sm text-slate-100">
-                <li>• Full case management</li>
-                <li>• Weekly reports</li>
-                <li>• Voucher monitoring</li>
-                <li>• Back-office support</li>
-              </ul>
+              <div className="mt-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-200">
+                  Support Includes:
+                </p>
+                <ul className="mt-3 space-y-3 text-sm text-slate-100">
+                  <li>• Full case management oversight</li>
+                  <li>• Weekly status reporting</li>
+                  <li>• Voucher monitoring</li>
+                  <li>• Workflow guidance</li>
+                  <li>• Operational consultation</li>
+                </ul>
+              </div>
               <a
                 href={PRO_QUOTE_FORM_URL}
                 target="_blank"
@@ -374,12 +380,13 @@ export default function HomePage() {
                 Pricing is custom based on caseload and data sources; most projects range between $250-$750.
               </p>
               <div className="mt-6 rounded-2xl border border-white/10 bg-slate-950/60 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">Onboarding process</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">Onboarding Process</p>
                 <ol className="mt-3 space-y-2 text-sm text-slate-200">
-                  <li>1. Subscribe to TIER CaseFlow</li>
-                  <li>2. Submit an onboarding request</li>
-                  <li>3. Receive a custom quote</li>
-                  <li>4. Onboarding begins after payment</li>
+                  <li>1. Submit onboarding request</li>
+                  <li>2. Receive custom onboarding quote</li>
+                  <li>3. Complete payment</li>
+                  <li>4. Begin onboarding</li>
+                  <li>5. Access Only subscription begins after onboarding period</li>
                 </ol>
               </div>
               <a
@@ -397,8 +404,8 @@ export default function HomePage() {
                 <p className="text-sm uppercase tracking-[0.2em] text-emerald-200">Founding Members Program</p>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-slate-200">
-                Become one of ten Founding Investigators and help shape what&apos;s next while receiving exclusive
-                onboarding and support benefits.
+                Become one of ten Founding Investigators and receive enhanced onboarding, advisory support, direct
+                founder access, and the opportunity to help shape future platform enhancements.
               </p>
               <ul className="mt-6 space-y-3 text-sm text-slate-200">
                 <li>• 3 months advisory support included</li>
