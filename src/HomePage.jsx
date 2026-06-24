@@ -103,8 +103,8 @@ export default function HomePage() {
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
               TIER CaseFlow is a real-time intelligence platform that helps criminal investigators manage cases, track
-              activities, monitor deadlines, and streamline workflow from intake to closure—ensuring no work goes
-              unbilled.
+              activities, monitor deadlines, and streamline workflow from intake to closure—helping investigators
+              capture and account for every billable activity.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -211,8 +211,7 @@ export default function HomePage() {
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-300">
                 Built from real investigative workflows, TIER CaseFlow is designed to keep cases moving, help track
-                tasks and deadlines more effectively, keep attorneys informed, and ensure no revenue is left on the
-                table.
+                tasks and deadlines more effectively, keep attorneys informed, and help protect billable revenue.
               </p>
             </div>
 
@@ -350,7 +349,7 @@ export default function HomePage() {
                   Support Includes:
                 </p>
                 <ul className="mt-3 space-y-3 text-sm text-slate-100">
-                  <li>• Full case management oversight</li>
+                  <li>• Full Case Management Oversight</li>
                   <li>• Weekly status reporting</li>
                   <li>• Voucher monitoring</li>
                   <li>• Workflow guidance</li>
@@ -377,7 +376,7 @@ export default function HomePage() {
                 We migrate existing cases and organize your system so you start with a clean, structured workflow.
               </p>
               <p className="mt-3 text-sm leading-relaxed text-slate-300">
-                Pricing is custom based on caseload and data sources; most projects range between $250-$750.
+                Pricing is custom based on caseload and data sources; most projects range between $150-$650.
               </p>
               <div className="mt-6 rounded-2xl border border-white/10 bg-slate-950/60 p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">Onboarding Process</p>
@@ -410,7 +409,7 @@ export default function HomePage() {
               <ul className="mt-6 space-y-3 text-sm text-slate-200">
                 <li>• 3 months advisory support included</li>
                 <li>• 50% off white-glove onboarding</li>
-                <li>• Direct founder collaboration</li>
+                <li>• Direct founder access</li>
                 <li>• Limited to 10 Founding Investigators</li>
               </ul>
               <Link
